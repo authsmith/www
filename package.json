@@ -10,7 +10,10 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@libsql/client": "*",
+    "@nuxt/content": "3.0.0",
     "nuxt": "^3.15.2",
+    "pg": "*",
     "vue": "latest",
     "vue-router": "latest"
   }
