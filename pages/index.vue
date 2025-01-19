@@ -1,6 +1,8 @@
 <script setup lang="ts">
 const { data: home } = await useAsyncData(() => queryCollection('content').path('/').first())
-
+definePageMeta({
+    layout: "root",
+});
 useSeoMeta({
     title: home.value?.title,
     description: home.value?.description
