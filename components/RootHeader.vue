@@ -14,7 +14,7 @@
             <ul class="text-xs font-medium flex items-center gap-2">
                 <li><a href="/docs" class="hover:underline">DOCS</a></li>
                 <li>|</li>
-                <li><a href="/docs" class="hover:underline">GITHUB</a></li>
+                <li><a href="https://github.com/authsmith" target="_blank" class="hover:underline">GITHUB</a></li>
             </ul>
         </nav>
     </header>

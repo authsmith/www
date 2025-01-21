@@ -8,7 +8,7 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "wrangler::deploy": "bun run generate && bun x wrangler pages deploy --branch=production .output/public/",
+    "wrangler::deploy": "bun run generate && bun x wrangler pages deploy --branch=main .output/public/",
     "wrangler::dev": "bun run generate && bun x wrangler pages dev .output/public/"
   },
   "dependencies": {
