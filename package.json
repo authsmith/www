@@ -12,15 +12,13 @@
     "wrangler::dev": "bun run generate && bun x wrangler pages dev .output/public/"
   },
   "dependencies": {
-    "@libsql/client": "*",
     "@nuxt/content": "3.0.0",
-    "@nuxtjs/google-fonts": "3.2.0",
+    "@nuxtjs/google-fonts": "3.0.0-1",
     "@nuxtjs/sitemap": "7.2.3",
     "@nuxtjs/tailwindcss": "6.13.1",
     "@tailwindcss/typography": "latest",
     "nuxt": "^3.15.2",
     "nuxt-og-image": "4.1.2",
-    "pg": "*",
     "vue": "latest",
     "vue-router": "latest"
   },

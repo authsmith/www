@@ -27,9 +27,9 @@ export default defineNuxtConfig({
   },
   devtools: { enabled: true },
   modules: [
+    "@nuxtjs/sitemap",
     "@nuxt/content",
     "@nuxtjs/tailwindcss",
-    "@nuxtjs/sitemap",
     "nuxt-og-image",
     "@nuxtjs/google-fonts",
   ],
@@ -45,8 +45,9 @@ export default defineNuxtConfig({
     },
   },
   googleFonts: {
+    display: "swap",
     families: {
-      "Martian Mono": "100...800",
+      "Martian Mono": "100..800",
     },
   },
 });

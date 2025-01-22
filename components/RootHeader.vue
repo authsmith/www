@@ -8,7 +8,7 @@
                     fill="white" />
                 <path d="M68.1387 33.7038H88.6582" stroke="#FCFDFE" stroke-width="4" />
             </svg>
-            <strong>AuthSmith</strong>
+            <strong class="font-black">AuthSmith</strong>
         </nav>
         <nav>
             <ul class="text-xs font-medium flex items-center gap-2">
