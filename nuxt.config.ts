@@ -27,11 +27,11 @@ export default defineNuxtConfig({
   },
   devtools: { enabled: true },
   modules: [
-    "@nuxtjs/sitemap",
     "@nuxt/content",
     "@nuxtjs/tailwindcss",
     "nuxt-og-image",
     "@nuxtjs/google-fonts",
+    "@nuxtjs/sitemap",
   ],
   site: {
     url: "https://authsmith.com",
