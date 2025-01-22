@@ -14,14 +14,18 @@
   "dependencies": {
     "@libsql/client": "*",
     "@nuxt/content": "3.0.0",
+    "@nuxtjs/google-fonts": "3.2.0",
+    "@nuxtjs/sitemap": "7.2.3",
     "@nuxtjs/tailwindcss": "6.13.1",
     "@tailwindcss/typography": "latest",
     "nuxt": "^3.15.2",
+    "nuxt-og-image": "4.1.2",
     "pg": "*",
     "vue": "latest",
     "vue-router": "latest"
   },
   "devDependencies": {
+    "@unhead/schema-org": "^1.11.18",
     "autoprefixer": "^10.4.20",
     "postcss": "^8.4.49",
     "tailwindcss": "^3.4.17",

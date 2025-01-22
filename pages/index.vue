@@ -1,15 +1,38 @@
 <script setup lang="ts">
-const { data: home } = await useAsyncData(() => queryCollection('content').path('/').first())
+import { defineWebPage, defineWebSite, useSchemaOrg } from '@unhead/schema-org/vue'
+const { data } = await useAsyncData(() => queryCollection('content').path('/').first())
 definePageMeta({
     layout: "root",
 });
 useSeoMeta({
-    title: home.value?.title,
-    description: home.value?.description
+    title: data.value?.title,
+    description: data.value?.description
 })
+defineOgImageComponent('Page', {
+    title: data.value?.title,
+    description: data.value?.description,
+})
+const route = useRoute()
+useHead({
+    templateParams: {
+        schemaOrg: {
+            host: 'https://authsmith.com',
+            path: route.path,
+            inLanguage: 'en',
+        }
+    }
+})
+
+useSchemaOrg([
+    defineWebPage(),
+    defineWebSite({
+        title: data.value?.title,
+        description: data.value?.description,
+    }),
+])
 </script>
 
 <template>
-    <ContentRenderer v-if="home" :value="home" />
-    <div v-else>Home not found</div>
+    <ContentRenderer v-if="data" :value="data" />
+    <div v-else>data not found</div>
 </template>

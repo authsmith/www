@@ -1,3 +1,11 @@
+<script setup lang="ts">
+import { defineOrganization, useSchemaOrg } from '@unhead/schema-org/vue'
+useSchemaOrg([
+    defineOrganization({
+        name: 'AuthSmith',
+    })
+])
+</script>
 <template>
     <main class="bg-dark font-body text-white text-xs md:text-sm font-thin relative">
         <RootHeader class="relative z-10" />
