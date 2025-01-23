@@ -13,8 +13,8 @@ useSeoMeta({
     description: data.value?.description
 })
 defineOgImageComponent('Page', {
-    title: data.value?.title,
-    description: data.value?.description,
+    title: data.value?.seo.title,
+    description: data.value?.seo.description
 })
 useHead({
     templateParams: {
@@ -28,8 +28,8 @@ useHead({
 useSchemaOrg([
     defineWebPage(),
     defineWebSite({
-        title: data.value?.title,
-        description: data.value?.description,
+        title: data.value?.seo.title,
+        description: data.value?.seo.description,
     }),
 ])
 </script>
