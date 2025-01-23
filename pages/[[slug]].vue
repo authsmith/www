@@ -1,6 +1,10 @@
 <script setup lang="ts">
 import { defineWebPage, defineWebSite, useSchemaOrg } from '@unhead/schema-org/vue'
-const { data } = await useAsyncData(() => queryCollection('content').path('/').first())
+
+const route = useRoute()
+const path = route.params.slug === "" ? "/" : `/${route.params.slug}`
+const { data } = await useAsyncData(() => queryCollection('content').path(path).first())
+
 definePageMeta({
     layout: "root",
 });
@@ -12,7 +16,6 @@ defineOgImageComponent('Page', {
     title: data.value?.title,
     description: data.value?.description,
 })
-const route = useRoute()
 useHead({
     templateParams: {
         schemaOrg: {
@@ -22,7 +25,6 @@ useHead({
         }
     }
 })
-
 useSchemaOrg([
     defineWebPage(),
     defineWebSite({
