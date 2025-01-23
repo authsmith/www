@@ -7,10 +7,10 @@ useSchemaOrg([
 ])
 </script>
 <template>
-    <main class="bg-dark font-body text-white text-xs md:text-sm font-thin relative">
+    <main class="bg-dark text-white relative font-extralight text-sm min-h-dvh">
         <RootHeader class="relative z-10" />
-        <div class="max-w-[1900px] mx-auto px-0 md:px-10 relative z-10">
-            <div class="pt-10 px-4">
+        <div class="[max-width:1248px] mx-auto relative z-10">
+            <div class="pt-10">
                 <slot />
             </div>
         </div>
