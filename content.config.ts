@@ -9,11 +9,6 @@ export default defineContentConfig({
         docs: defineCollection({
             source: 'docs/*.md',
             type: 'page',
-            // schema: z.object({
-            //     tags: z.array(z.string()),
-            //     image: z.string(),
-            //     date: z.date()
-            // })
         })
     }
 })
