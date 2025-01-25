@@ -14,4 +14,5 @@
 html,
 body {
     font-family: 'Martian Mono', Courier, monospace;
+    line-height: 26px;
 }

@@ -1,5 +1,5 @@
 <template>
-    <header class="bg-accent">
+    <header class="bg-accent text-white">
         <nav class="[max-width:1248px] mx-auto px-6 xl:px-0 flex items-center justify-between gap-4">
             <a href="/" class="flex items-center gap-2">
                 <svg width="45" height="30" viewBox="0 0 99 42" fill="none" xmlns="http://www.w3.org/2000/svg">
