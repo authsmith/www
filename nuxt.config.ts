@@ -1,5 +1,10 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  vite: {
+    server: {
+      hmr: true
+    }
+  },
   app: {
     head: {
       link: [{ rel: "icon", type: "image/png", href: "/logo.png" }],
@@ -27,11 +32,11 @@ export default defineNuxtConfig({
   },
   devtools: { enabled: true },
   modules: [
+    "@nuxtjs/sitemap",
     "@nuxt/content",
     "@nuxtjs/tailwindcss",
     "nuxt-og-image",
     "@nuxtjs/google-fonts",
-    "@nuxtjs/sitemap",
   ],
   site: {
     url: "https://authsmith.com",
