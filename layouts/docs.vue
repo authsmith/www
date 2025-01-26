@@ -10,7 +10,7 @@ useSchemaOrg([
     <main class="bg-dark text-white relative font-extralight text-sm min-h-dvh">
         <RootHeader class="relative z-10" />
         <div class="[max-width:1248px] mx-auto relative z-10 px-6 xl:px-0">
-            <div class="pt-10 grid grid-cols-8">
+            <div class="pt-10 grid grid-cols-8 gap-10">
                 <div class="col-span-2">
                     <DocsNavigation />
                 </div>
