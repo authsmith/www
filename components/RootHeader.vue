@@ -1,7 +1,7 @@
 <template>
     <header class="bg-accent text-white">
         <nav class="[max-width:1248px] mx-auto px-6 xl:px-0 flex items-center justify-between gap-4">
-            <a href="/" class="flex items-center gap-2">
+            <NuxtLink to="/" class="flex items-center gap-2">
                 <svg width="45" height="30" viewBox="0 0 99 42" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <rect x="1.5" y="1.5" width="96" height="39" stroke="#FCFDFE" stroke-width="3" />
                     <path
@@ -10,11 +10,16 @@
                     <path d="M68.1387 33.7038H88.6582" stroke="#FCFDFE" stroke-width="4" />
                 </svg>
                 <strong class="font-black">AuthSmith</strong>
-            </a>
+            </NuxtLink>
             <ul class="text-xs font-medium flex items-center gap-2">
-                <li><a href="/docs" class="hover:underline">DOCS</a></li>
+                <li>
+                    <NuxtLink to="/docs" class="hover:underline">DOCS</NuxtLink>
+                </li>
                 <li>|</li>
-                <li><a href="https://github.com/authsmith" target="_blank" class="hover:underline">GITHUB</a></li>
+                <li>
+                    <NuxtLink to="https://github.com/authsmith" target="_blank" class="hover:underline">GITHUB
+                    </NuxtLink>
+                </li>
             </ul>
         </nav>
     </header>

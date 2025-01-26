@@ -19,9 +19,10 @@ const isActiveDirectory = (directoryPath: string) => currentPath.includes(direct
         <div v-if="node.type === 'internalLink'" class="flex items-center gap-2 group">
             <span
                 :class="[{ 'opacity-0 group-hover:opacity-55': currentPath !== node.path }, { 'opacity-100': currentPath === node.path }]">></span>
-            <a :href="node.path"
-                :class="[{ 'opacity-55 group-hover:opacity-100': currentPath !== node.path }, { 'opacity-100': currentPath === node.path }]">{{
-                    node.label }}</a>
+            <NuxtLink :to="node.path"
+                :class="[{ 'opacity-55 group-hover:opacity-100': currentPath !== node.path }, { 'opacity-100': currentPath === node.path }]">
+                {{
+                    node.label }}</NuxtLink>
         </div>
 
         <!-- Directory -->
@@ -29,9 +30,10 @@ const isActiveDirectory = (directoryPath: string) => currentPath.includes(direct
             <div class="flex items-center gap-2 group">
                 <span
                     :class="[{ 'opacity-0 rotate-0 group-hover:opacity-55': !isActiveDirectory(node.path) }, { 'opacity-100 rotate-90': isActiveDirectory(node.path) }]">></span>
-                <a :href="node.path"
-                    :class="[{ 'opacity-55 group-hover:opacity-100': currentPath !== node.path }, { 'opacity-100': currentPath === node.path }]">{{
-                        node.label }}</a>
+                <NuxtLink :to="node.path"
+                    :class="[{ 'opacity-55 group-hover:opacity-100': currentPath !== node.path }, { 'opacity-100': currentPath === node.path }]">
+                    {{
+                        node.label }}</NuxtLink>
             </div>
 
             <!-- Render child nodes if any -->
