@@ -35,6 +35,13 @@ useSchemaOrg([
 </script>
 
 <template>
-    <ContentRenderer v-if="data" :value="data" />
-    <div v-else>data not found</div>
+    <div class="grid grid-cols-8 gap-10">
+        <div class="col-span-2">
+            <DocsNavigation />
+        </div>
+        <div class="col-span-6">
+            <ContentRenderer v-if="data" :value="data" />
+            <div v-else>data not found</div>
+        </div>
+    </div>
 </template>
