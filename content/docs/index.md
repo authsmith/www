@@ -8,7 +8,7 @@ seo:
 
 ::section
 
-[Introduction]{.font-bold .border-b .border-white}
+[Introduction]{.content-title}
 
 AuthSmith is an open-source platform built to manage authentication services at any scale. It is developer-first tool that allows standard authentication setup of different models in any application.
 <br/>
@@ -18,7 +18,7 @@ Console is a graphical user interface of AuthSmith that comes with user manageme
 <br/>
 <br/>
 
-[The future]{.font-bold .border-b .border-white}
+[The future]{.content-title}
 
 As AuthSmith matures, you can see the following updates:
 <br/>
