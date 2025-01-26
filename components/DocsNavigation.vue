@@ -36,6 +36,11 @@ const routes = [
                     },
                 ]
             },
+            {
+                label: 'Contributions',
+                path: '/docs/plugins/contributions',
+                type: 'internalLink',
+            },
         ],
     },
     {
@@ -91,11 +96,23 @@ const routes = [
         ]
     }
 ];
-
+const closeMobileNav = ref(true)
+const toggleMobileNav = () => {
+    closeMobileNav.value = !closeMobileNav.value;
+};
 </script>
 
 <template>
-    <nav class="flex flex-col items-start gap-y-4 dashed-border px-4 py-4 h-[90vh]">
-        <FileTree :nodes="routes" />
-    </nav>
+    <div :class="['md:hidden rotate-0 absolute top-2 z-10', { 'rotate-180': closeMobileNav }]" @click="toggleMobileNav">
+        >></div>
+    <div :class="[
+        'absolute z-10 bg-dark w-[280px] md:w-full md:relative md:col-span-2 space-y-4 md:space-y-0',
+        { '-left-80 md:left-0': closeMobileNav },
+        { 'left-6 md:left-0': !closeMobileNav }
+    ]">
+        <nav class="flex flex-col items-start gap-y-4 dashed-border px-4 py-4 h-[90vh]">
+            <FileTree :nodes="routes" />
+        </nav>
+    </div>
+
 </template>
