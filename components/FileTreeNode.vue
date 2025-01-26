@@ -1,0 +1,41 @@
+<script lang="ts" setup>
+defineProps({
+    node: {
+        type: Object,
+        required: true,
+    },
+});
+
+const currentRoute = useRoute();
+const currentPath = currentRoute.path;
+
+// Utility function to determine if a directory is active
+const isActiveDirectory = (directoryPath: string) => currentPath.includes(directoryPath);
+</script>
+
+<template>
+    <li class="w-full cursor-pointer text-xs">
+        <!-- Internal Link -->
+        <div v-if="node.type === 'internalLink'" class="flex items-center gap-2 group">
+            <span
+                :class="[{ 'opacity-0 group-hover:opacity-55': currentPath !== node.path }, { 'opacity-100': currentPath === node.path }]">></span>
+            <a :href="node.path"
+                :class="[{ 'opacity-55 group-hover:opacity-100': currentPath !== node.path }, { 'opacity-100': currentPath === node.path }]">{{
+                    node.label }}</a>
+        </div>
+
+        <!-- Directory -->
+        <div v-else-if="node.type === 'directory'" class="w-full">
+            <div class="flex items-center gap-2 group">
+                <span
+                    :class="[{ 'opacity-0 rotate-0 group-hover:opacity-55': !isActiveDirectory(node.path) }, { 'opacity-100 rotate-90': isActiveDirectory(node.path) }]">></span>
+                <a :href="node.path"
+                    :class="[{ 'opacity-55 group-hover:opacity-100': currentPath !== node.path }, { 'opacity-100': currentPath === node.path }]">{{
+                        node.label }}</a>
+            </div>
+
+            <!-- Render child nodes if any -->
+            <DirectoryTree v-if="node.tree && node.tree.length && isActiveDirectory(node.path)" :nodes="node.tree" />
+        </div>
+    </li>
+</template>

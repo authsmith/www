@@ -16,3 +16,13 @@ body {
     font-family: 'Martian Mono', Courier, monospace;
     line-height: 26px;
 }
+
+.dashed-border {
+    background-image: repeating-linear-gradient(0deg, #ffffff50, #ffffff50 12px, transparent 12px, transparent 16px),
+        repeating-linear-gradient(90deg, #ffffff50, #ffffff50 12px, transparent 12px, transparent 16px),
+        repeating-linear-gradient(180deg, #ffffff50, #ffffff50 12px, transparent 12px, transparent 16px),
+        repeating-linear-gradient(90deg, #ffffff50, #ffffff50 12px, transparent 12px, transparent 16px);
+    background-size: 1px 100%, 100% 1px, 1px 100%, 100% 1px;
+    background-position: 0 0, 0 0, 100% 0, 0 100%;
+    background-repeat: no-repeat;
+}
