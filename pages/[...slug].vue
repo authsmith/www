@@ -36,5 +36,5 @@ useSchemaOrg([
 
 <template>
     <ContentRenderer v-if="data" :value="data" />
-    <div v-else>data not found</div>
+    <div v-else>Work In Progress</div>
 </template>

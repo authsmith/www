@@ -44,7 +44,7 @@ useSchemaOrg([
         </div>
         <div class="pt-6 md:pt-0 md:col-span-6">
             <ContentRenderer v-if="data" :value="data" />
-            <div v-else>data not found</div>
+            <div v-else>Work In Progress</div>
         </div>
     </div>
 </template>
