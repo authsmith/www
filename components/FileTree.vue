@@ -8,7 +8,7 @@ defineProps({
 </script>
 
 <template>
-    <ul class="space-y-4">
+    <ul class="space-y-2">
         <FileTreeNode v-for="(node, index) in nodes" :key="index" :node="node" />
     </ul>
 </template>

@@ -8,28 +8,28 @@ const routes = [
         tree: [],
     },
     {
-        label: '/Plugins',
+        label: 'Plugins',
         path: '/docs/plugins',
         type: 'directory',
         tree: [
             {
-                label: '/Payload CMS',
-                path: '/docs/plugins/payload-cms',
+                label: 'Payload',
+                path: '/docs/plugins/payload',
                 type: 'directory',
                 tree: [
                     {
                         label: 'Integration',
-                        path: '/docs/plugins/payload-cms/integration',
+                        path: '/docs/plugins/payload/integration',
                         type: 'internalLink',
                     },
                     {
-                        label: '/Authentication',
-                        path: '/docs/plugins/payload-cms/authentication',
+                        label: 'Authentication',
+                        path: '/docs/plugins/payload/authentication',
                         type: 'directory',
                         tree: [
                             {
                                 label: 'Auth0',
-                                path: '/docs/plugins/payload-cms/authentication/auth0',
+                                path: '/docs/plugins/payload/authentication/auth0',
                                 type: 'internalLink',
                             },
                         ]
@@ -44,7 +44,7 @@ const routes = [
         ],
     },
     {
-        label: "/SDKs",
+        label: "SDKs",
         path: '/docs/sdks',
         type: 'directory',
         tree: [
@@ -110,7 +110,7 @@ const toggleMobileNav = () => {
         { '-left-80 md:left-0': closeMobileNav },
         { 'left-6 md:left-0': !closeMobileNav }
     ]">
-        <nav class="flex flex-col items-start gap-y-4 dashed-border px-4 py-4 h-[90vh]">
+        <nav class="flex flex-col items-start gap-y-4 dashed-border px-4 py-4 h-[86vh]">
             <FileTree :nodes="routes" />
         </nav>
     </div>
