@@ -5,6 +5,9 @@ export default defineNuxtConfig({
       link: [{ rel: "icon", type: "image/png", href: "/logo.png" }],
     },
   },
+  nitro: {
+    preset: "cloudflare-pages",
+  },
   compatibilityDate: "2024-11-01",
   content: {
     build: {
@@ -13,6 +16,10 @@ export default defineNuxtConfig({
           depth: 3,
         },
       },
+    },
+    database: {
+      type: "d1",
+      binding: "AUTHSMITH_D1",
     },
   },
   devtools: { enabled: true },
