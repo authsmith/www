@@ -5,11 +5,10 @@
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
-    "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "wrangler::deploy": "bun run generate && bun x wrangler pages deploy --branch=main .output/public/",
-    "wrangler::dev": "bun run generate && bun x wrangler pages dev .output/public/"
+    "wrangler::deploy": "pnpm run generate && pnpm x wrangler pages deploy .output/public/",
+    "wrangler::dev": "pnpm run generate && pnpm x wrangler pages dev .output/public/"
   },
   "dependencies": {
     "@nuxt/content": "3.0.0",

@@ -14,16 +14,6 @@ export default defineNuxtConfig({
         },
       },
     },
-    database: {
-      type: "libsql",
-      url: process.env.TURSO_DATABASE_URL!,
-      authToken: process.env.TURSO_AUTH_TOKEN!,
-    },
-  },
-  nitro: {
-    prerender: {
-      autoSubfolderIndex: false,
-    },
   },
   devtools: { enabled: true },
   modules: [
