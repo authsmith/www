@@ -38,11 +38,11 @@ useSchemaOrg([
 </script>
 
 <template>
-    <div class="grid grid-cols-1 md:grid-cols-8 gap-10">
-        <div class="md:col-span-2">
+    <div class="grid grid-cols-1 lg:grid-cols-9 gap-14">
+        <div class="lg:col-span-2">
             <DocsNavigation />
         </div>
-        <div class="pt-6 md:pt-0 md:col-span-6">
+        <div class="pt-6 lg:pt-0 lg:col-span-7">
             <ContentRenderer v-if="data" :value="data" />
             <div v-else>Work In Progress</div>
         </div>
