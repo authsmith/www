@@ -15,6 +15,20 @@ export default defineNuxtConfig({
         toc: {
           depth: 3,
         },
+        highlight: {
+          theme: "houston",
+          preload: [
+            "bash",
+            "ts",
+            "js",
+            "css",
+            "java",
+            "groovy",
+            "sql",
+            "xml",
+            "json",
+          ],
+        },
       },
     },
     database: {
