@@ -18,13 +18,18 @@ const routes = [
                 type: 'directory',
                 tree: [
                     {
-                        label: 'Integration',
-                        path: '/docs/plugins/payload/integration',
+                        label: 'Installation',
+                        path: '/docs/plugins/payload/installation',
                         type: 'internalLink',
                     },
                     {
-                        label: 'Authentication',
-                        path: '/docs/plugins/payload/authentication',
+                        label: 'Configuration',
+                        path: '/docs/plugins/payload/configuration',
+                        type: 'internalLink',
+                    },
+                    {
+                        label: 'Providers',
+                        path: '/docs/plugins/payload/providers',
                         type: 'directory',
                         tree: [
                             {
@@ -103,16 +108,21 @@ const toggleMobileNav = () => {
 </script>
 
 <template>
-    <div :class="['md:hidden rotate-0 absolute top-2 z-10', { 'rotate-180': closeMobileNav }]" @click="toggleMobileNav">
-        >></div>
-    <div :class="[
-        'absolute z-10 bg-dark w-[280px] md:w-full md:relative md:col-span-2 space-y-4 md:space-y-0',
-        { '-left-80 md:left-0': closeMobileNav },
-        { 'left-6 md:left-0': !closeMobileNav }
+    <div class="relative lg:hidden">
+        <span :class="['rotate-0 fixed top-14 left-6 z-10', { 'rotate-180': closeMobileNav }]" @click="toggleMobileNav">
+            >></span>
+    </div>
+    <div :class="['fixed max-w-64 w-full z-50 flex flex-col top-24 lg:top-16',
+        { '-left-80 lg:left-6': closeMobileNav },
+        { 'left-6 lg:left-6': !closeMobileNav }
     ]">
-        <nav class="flex flex-col items-start gap-y-4 dashed-border px-4 py-4 h-[86vh]">
-            <FileTree :nodes="routes" />
-        </nav>
+        <div :class="[
+            'bg-dark w-full relative lg:col-span-2 space-y-4 lg:space-y-0',
+        ]">
+            <nav class="flex flex-col items-start gap-y-4 dashed-border px-4 py-4 h-[86vh]">
+                <FileTree :nodes="routes" />
+            </nav>
+        </div>
     </div>
 
 </template>
