@@ -18,10 +18,10 @@ body {
 }
 
 .dashed-border {
-    background-image: repeating-linear-gradient(0deg, #ffffff20, #ffffff20 12px, transparent 12px, transparent 16px),
-        repeating-linear-gradient(90deg, #ffffff20, #ffffff20 12px, transparent 12px, transparent 16px),
-        repeating-linear-gradient(180deg, #ffffff20, #ffffff20 12px, transparent 12px, transparent 16px),
-        repeating-linear-gradient(90deg, #ffffff20, #ffffff20 12px, transparent 12px, transparent 16px);
+    background-image: repeating-linear-gradient(0deg, #ffffff40, #ffffff40 12px, transparent 12px, transparent 16px),
+        repeating-linear-gradient(90deg, #ffffff40, #ffffff40 12px, transparent 12px, transparent 16px),
+        repeating-linear-gradient(180deg, #ffffff40, #ffffff40 12px, transparent 12px, transparent 16px),
+        repeating-linear-gradient(90deg, #ffffff40, #ffffff40 12px, transparent 12px, transparent 16px);
     background-size: 1px 100%, 100% 1px, 1px 100%, 100% 1px;
     background-position: 0 0, 0 0, 100% 0, 0 100%;
     background-repeat: no-repeat;
@@ -37,11 +37,48 @@ body {
 }
 
 blockquote {
-    border-left: 2px #ffffff20 solid;
+    border-left: 2px #ffffff40 solid;
     padding: 8px 20px;
 }
 
-p>code {
-    background-color: #ffffff20;
+p code {
+    background-color: #ffffff40;
     padding: 5px;
+}
+
+pre code {
+    border: #ffffff40 solid thin;
+    display: block;
+    box-sizing: border-box;
+    overflow: hidden;
+    padding-block: 10px;
+}
+
+pre code>* {
+    padding-inline: 16px
+}
+
+.line.highlight {
+    background: #11382e40;
+    width: 100% !important;
+    display: block;
+}
+
+.ascii-art {
+    font-family: monospace;
+    white-space: pre;
+    font-size: 12px;
+    overflow-x: auto;
+}
+
+@media (max-width: 768px) {
+    .ascii-art {
+        font-size: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .ascii-art {
+        font-size: 6px;
+    }
 }
