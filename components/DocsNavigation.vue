@@ -172,9 +172,9 @@ const toggleMobileNav = () => {
         { 'left-0 lg:left-0': !closeMobileNav }
     ]">
         <div :class="[
-            'bg-dark w-full relative lg:col-span-2 space-y-4 lg:space-y-0',
+            'bg-dark w-full relative lg:col-span-2 space-y-4 lg:space-y-0 dashed-border pr-4',
         ]">
-            <nav class="flex flex-col items-start gap-y-6 dashed-border px-6 h-screen pt-14 lg:pt-6">
+            <nav class="flex flex-col items-start gap-y-6 px-6 h-screen overflow-y-scroll pt-14 lg:pt-6 pb-12">
                 <FileTree :nodes="routes" />
             </nav>
         </div>

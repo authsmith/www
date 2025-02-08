@@ -38,7 +38,7 @@ useSchemaOrg([
 </script>
 
 <template>
-    <div class="grid grid-cols-1 lg:grid-cols-9 gap-14">
+    <div class="grid grid-cols-1 lg:grid-cols-9 gap-10">
         <div class="lg:col-span-2">
             <DocsNavigation />
         </div>
