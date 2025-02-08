@@ -73,8 +73,18 @@ const routes = [
                                 type: 'internalLink',
                             },
                             {
+                                label: 'Google',
+                                path: '/docs/plugins/payload/providers/google',
+                                type: 'internalLink',
+                            },
+                            {
                                 label: 'Microsoft Entra',
                                 path: '/docs/plugins/payload/providers/microsoft-entra',
+                                type: 'internalLink',
+                            },
+                            {
+                                label: 'Passkey ⚠',
+                                path: '/docs/plugins/payload/providers/passkey',
                                 type: 'internalLink',
                             },
                             {
@@ -90,11 +100,6 @@ const routes = [
                         type: 'internalLink',
                     },
                 ]
-            },
-            {
-                label: 'Contributions',
-                path: '/docs/plugins/contributions',
-                type: 'internalLink',
             },
         ],
     },
