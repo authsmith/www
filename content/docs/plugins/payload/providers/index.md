@@ -7,7 +7,7 @@ seo:
 ---
 
 ::section
-Payload Auth Plugin supports a lot of auth providers and some custom providers too. Check out the list below.
+Payload Auth Plugin supports many OAuth providers, and some additional providers too. Check out the list below.
 <br/>
 <br/>
 [OAuth Providers:]{.content-title}
@@ -35,7 +35,28 @@ Payload Auth Plugin supports a lot of auth providers and some custom providers t
 ○ [GitHub](/docs/plugins/payload/providers/github){.link-highlight}
 <br/>
 
+○ [GitLab](/docs/plugins/payload/providers/gitlab){.link-highlight}
+<br/>
+
 ○ [Google](/docs/plugins/payload/providers/google){.link-highlight}
+<br/>
+
+○ [Microsoft Entra](/docs/plugins/payload/providers/microsoft-entra){.link-highlight}
+<br/>
+
+○ [Slack](/docs/plugins/payload/providers/slack){.link-highlight}
+<br/>
+
+::
+
+<br/>
+<br/>
+
+[Other Providers:]{.content-title}
+<br/>
+
+::list
+○ [Passkey](/docs/plugins/payload/providers/passkey){.link-highlight}
 <br/>
 
 ::
