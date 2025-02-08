@@ -7,11 +7,16 @@ seo:
 ---
 
 ::section
-AuthSmith is a developer-first authentication platform with built-in support for web and platform-native applications. Scalable fine-grained access control model that is easy to manage using the console.
+AuthSmith is a centralized, open-source authentication platform. It uses standard protocols and methods to implement multiple authentication paradigms across all languages and frameworks.
+
 <br/>
+
+It is also a developer-first platform for building custom authentication services using built-in APIs and SDKs, making it easier to scale and configure fine-grained access levels to meet all application security requirements.
+
 <br/>
+
+Apart from the core services, it also provides authentication plugins for various applications and frameworks. These plugins make it easier to integrate OAuth, custom authentication, MFA, Passkey, and many other authentication methods into your projects.
 <br/>
 <br/>
 
-**\[WIP\]feat: adding...**
 ::
