@@ -33,11 +33,61 @@ const routes = [
                         type: 'directory',
                         tree: [
                             {
+                                label: 'Apple',
+                                path: '/docs/plugins/payload/providers/apple',
+                                type: 'internalLink',
+                            },
+                            {
+                                label: 'Atlassian',
+                                path: '/docs/plugins/payload/providers/atlassian',
+                                type: 'internalLink',
+                            },
+                            {
                                 label: 'Auth0',
-                                path: '/docs/plugins/payload/authentication/auth0',
+                                path: '/docs/plugins/payload/providers/auth0',
+                                type: 'internalLink',
+                            },
+                            {
+                                label: 'AWS Cognito',
+                                path: '/docs/plugins/payload/providers/cognito',
+                                type: 'internalLink',
+                            },
+                            {
+                                label: 'Discord',
+                                path: '/docs/plugins/payload/providers/discord',
+                                type: 'internalLink',
+                            },
+                            {
+                                label: 'Facebook',
+                                path: '/docs/plugins/payload/providers/facebook',
+                                type: 'internalLink',
+                            },
+                            {
+                                label: 'GitHub',
+                                path: '/docs/plugins/payload/providers/github',
+                                type: 'internalLink',
+                            },
+                            {
+                                label: 'GitLab',
+                                path: '/docs/plugins/payload/providers/gitlab',
+                                type: 'internalLink',
+                            },
+                            {
+                                label: 'Microsoft Entra',
+                                path: '/docs/plugins/payload/providers/microsoft-entra',
+                                type: 'internalLink',
+                            },
+                            {
+                                label: 'Slack',
+                                path: '/docs/plugins/payload/providers/slack',
                                 type: 'internalLink',
                             },
                         ]
+                    },
+                    {
+                        label: 'Contribution',
+                        path: '/docs/plugins/payload/contribution',
+                        type: 'internalLink',
                     },
                 ]
             },
@@ -48,58 +98,58 @@ const routes = [
             },
         ],
     },
-    {
-        label: "SDKs",
-        path: '/docs/sdks',
-        type: 'directory',
-        tree: [
-            {
-                label: 'Elixir',
-                path: '/docs/sdks/elixir',
-                type: 'internalLink',
-            },
-            {
-                label: 'GoLang',
-                path: '/docs/sdks/golang',
-                type: 'internalLink',
-            },
-            {
-                label: 'Javscript',
-                path: '/docs/sdks/javascript',
-                type: 'internalLink',
-            },
-            {
-                label: 'PHP',
-                path: '/docs/sdks/php',
-                type: 'internalLink',
-            },
-            {
-                label: 'Python',
-                path: '/docs/sdks/pyhton',
-                type: 'internalLink',
-            },
-            {
-                label: 'Scala',
-                path: '/docs/sdks/scala',
-                type: 'internalLink',
-            },
-            {
-                label: 'Swift',
-                path: '/docs/sdks/swift',
-                type: 'internalLink',
-            },
-            {
-                label: 'Rust',
-                path: '/docs/sdks/rust',
-                type: 'internalLink',
-            },
-            {
-                label: 'Zig',
-                path: '/docs/sdks/zig',
-                type: 'internalLink',
-            },
-        ]
-    }
+    // {
+    //     label: "SDKs",
+    //     path: '/docs/sdks',
+    //     type: 'directory',
+    //     tree: [
+    //         {
+    //             label: 'Elixir',
+    //             path: '/docs/sdks/elixir',
+    //             type: 'internalLink',
+    //         },
+    //         {
+    //             label: 'GoLang',
+    //             path: '/docs/sdks/golang',
+    //             type: 'internalLink',
+    //         },
+    //         {
+    //             label: 'Javscript',
+    //             path: '/docs/sdks/javascript',
+    //             type: 'internalLink',
+    //         },
+    //         {
+    //             label: 'PHP',
+    //             path: '/docs/sdks/php',
+    //             type: 'internalLink',
+    //         },
+    //         {
+    //             label: 'Python',
+    //             path: '/docs/sdks/pyhton',
+    //             type: 'internalLink',
+    //         },
+    //         {
+    //             label: 'Scala',
+    //             path: '/docs/sdks/scala',
+    //             type: 'internalLink',
+    //         },
+    //         {
+    //             label: 'Swift',
+    //             path: '/docs/sdks/swift',
+    //             type: 'internalLink',
+    //         },
+    //         {
+    //             label: 'Rust',
+    //             path: '/docs/sdks/rust',
+    //             type: 'internalLink',
+    //         },
+    //         {
+    //             label: 'Zig',
+    //             path: '/docs/sdks/zig',
+    //             type: 'internalLink',
+    //         },
+    //     ]
+    // }
 ];
 const closeMobileNav = ref(true)
 const toggleMobileNav = () => {

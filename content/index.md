@@ -12,5 +12,6 @@ AuthSmith is a developer-first authentication platform with built-in support for
 <br/>
 <br/>
 <br/>
+
 **\[WIP\]feat: adding...**
 ::
