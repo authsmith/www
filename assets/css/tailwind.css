@@ -17,7 +17,46 @@ body {
     line-height: 26px;
 }
 
+::-webkit-scrollbar {
+    width: 4px;
+}
+
+::-webkit-scrollbar:horizontal {
+    height: 4px;
+}
+
+::-webkit-scrollbar-thumb,
+::-webkit-scrollbar-thumb:horizontal {
+    border-radius: 0px;
+    border: 1px solid #D9D9D920;
+    background-clip: content-box;
+    background: #D9D9D920;
+}
+
+::-webkit-scrollbar-corner,
+::-webkit-scrollbar-corner:horizontal {
+    background: transparent;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
 .dashed-border {
+    background-image:
+        repeating-linear-gradient(0deg, transparent, transparent 12px, transparent 12px, transparent 16px),
+        repeating-linear-gradient(90deg, transparent, transparent 12px, transparent 12px, transparent 16px),
+        repeating-linear-gradient(180deg, #ffffff40, #ffffff40 12px, transparent 12px, transparent 16px),
+        repeating-linear-gradient(90deg, transparent, transparent 12px, transparent 12px, transparent 16px);
+    background-size: 1px 100%, 100% 1px, 1px 100%, 100% 1px;
+    background-position: 0 0, 0 0, 100% 0, 0 100%;
+    background-repeat: no-repeat;
+}
+
+.dashed-border-box {
     background-image: repeating-linear-gradient(0deg, #ffffff40, #ffffff40 12px, transparent 12px, transparent 16px),
         repeating-linear-gradient(90deg, #ffffff40, #ffffff40 12px, transparent 12px, transparent 16px),
         repeating-linear-gradient(180deg, #ffffff40, #ffffff40 12px, transparent 12px, transparent 16px),

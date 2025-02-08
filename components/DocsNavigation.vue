@@ -164,17 +164,17 @@ const toggleMobileNav = () => {
 
 <template>
     <div class="relative lg:hidden">
-        <span :class="['rotate-0 fixed top-14 left-6 z-10', { 'rotate-180': closeMobileNav }]" @click="toggleMobileNav">
+        <span :class="['rotate-0 fixed top-14 left-6 z-50', { 'rotate-180': closeMobileNav }]" @click="toggleMobileNav">
             >></span>
     </div>
-    <div :class="['fixed max-w-64 w-full z-50 flex flex-col top-24 lg:top-16',
-        { '-left-80 lg:left-6': closeMobileNav },
-        { 'left-6 lg:left-6': !closeMobileNav }
+    <div :class="['fixed max-w-64 w-full z-40 flex flex-col top-8',
+        { '-left-80 lg:left-0': closeMobileNav },
+        { 'left-0 lg:left-0': !closeMobileNav }
     ]">
         <div :class="[
             'bg-dark w-full relative lg:col-span-2 space-y-4 lg:space-y-0',
         ]">
-            <nav class="flex flex-col items-start gap-y-4 dashed-border px-4 py-4 h-[86vh]">
+            <nav class="flex flex-col items-start gap-y-6 dashed-border px-6 h-screen pt-14 lg:pt-6">
                 <FileTree :nodes="routes" />
             </nav>
         </div>
