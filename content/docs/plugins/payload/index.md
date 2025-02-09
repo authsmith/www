@@ -2,7 +2,7 @@
 title: "Plugins / Payload"
 description: "AuthSmith official Payload CMS auth plugin"
 seo:
-  title: "Paylaod Auth Plugin"
+  title: "Payload Auth Plugin"
   description: "AuthSmith official Payload CMS auth plugin"
 ---
 
