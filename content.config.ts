@@ -1,14 +1,19 @@
-import { defineContentConfig, defineCollection } from '@nuxt/content'
+import { defineContentConfig, defineCollection } from "@nuxt/content";
+import { asSitemapCollection } from "@nuxtjs/sitemap/content";
 
 export default defineContentConfig({
-    collections: {
-        content: defineCollection({
-            source: '**/*.md',
-            type: 'page',
-        }),
-        docs: defineCollection({
-            source: 'docs/**/*.md',
-            type: 'page',
-        })
-    }
-})
+  collections: {
+    content: defineCollection(
+      asSitemapCollection({
+        type: "page",
+        source: "**/*.md",
+      })
+    ),
+    docs: defineCollection(
+      asSitemapCollection({
+        source: "docs/**/*.md",
+        type: "page",
+      })
+    ),
+  },
+});
