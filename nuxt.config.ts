@@ -5,11 +5,6 @@ export default defineNuxtConfig({
       link: [{ rel: "icon", type: "image/png", href: "/logo.png" }],
     },
   },
-  hooks: {
-    "prerender:routes"({ routes }) {
-      routes.clear(); // Do not generate any routes (except the defaults)
-    },
-  },
   nitro: {
     preset: "cloudflare-pages",
   },
@@ -33,11 +28,11 @@ export default defineNuxtConfig({
         },
       },
     },
-    // database: {
-    //   type: "libsql",
-    //   url: process.env.TURSO_DATABASE_URL!,
-    //   authToken: process.env.TURSO_AUTH_TOKEN!,
-    // },
+    database: {
+      type: "libsql",
+      url: process.env.TURSO_DATABASE_URL!,
+      authToken: process.env.TURSO_AUTH_TOKEN!,
+    },
   },
   devtools: { enabled: true },
   modules: [
