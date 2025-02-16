@@ -28,11 +28,11 @@ export default defineNuxtConfig({
         },
       },
     },
-    database: {
-      type: "libsql",
-      url: process.env.TURSO_DATABASE_URL!,
-      authToken: process.env.TURSO_AUTH_TOKEN!,
-    },
+    // database: {
+    //   type: "libsql",
+    //   url: process.env.TURSO_DATABASE_URL!,
+    //   authToken: process.env.TURSO_AUTH_TOKEN!,
+    // },
   },
   devtools: { enabled: true },
   modules: [
