@@ -41,6 +41,7 @@ export default defineNuxtConfig({
     "@nuxtjs/tailwindcss",
     "nuxt-og-image",
     "@nuxtjs/google-fonts",
+    "@nuxthub/core",
   ],
   site: {
     url: "https://authsmith.com",
