@@ -5,8 +5,14 @@ export default defineNuxtConfig({
       link: [{ rel: "icon", type: "image/png", href: "/logo.png" }],
     },
   },
+  routeRules: {
+    "/docs/**": { prerender: true },
+  },
   nitro: {
-    preset: "cloudflare-pages",
+    prerender: {
+      crawlLinks: true,
+      routes: ["/sitemap.xml", "/robots.txt"],
+    },
   },
   compatibilityDate: "2024-11-01",
   content: {
@@ -35,11 +41,6 @@ export default defineNuxtConfig({
         },
       },
     },
-    // database: {
-    //   type: "libsql",
-    //   url: process.env.TURSO_DATABASE_URL!,
-    //   authToken: process.env.TURSO_AUTH_TOKEN!,
-    // },
   },
   devtools: { enabled: true },
   modules: [
@@ -48,7 +49,6 @@ export default defineNuxtConfig({
     "@nuxtjs/tailwindcss",
     "nuxt-og-image",
     "@nuxtjs/google-fonts",
-    "@nuxthub/core",
   ],
   site: {
     url: "https://authsmith.com",

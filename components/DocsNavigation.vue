@@ -179,5 +179,4 @@ const toggleMobileNav = () => {
             </nav>
         </div>
     </div>
-
 </template>

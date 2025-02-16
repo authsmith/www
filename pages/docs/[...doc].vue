@@ -2,10 +2,9 @@
 import { defineWebPage, defineWebSite, useSchemaOrg } from '@unhead/schema-org/vue'
 
 const route = useRoute()
+prerenderRoutes(route.path)
 const path = route.path
-const { data } = await useAsyncData(() => queryCollection('docs').path(path).first(), {
-    watch: [route]
-})
+const { data } = await useAsyncData(path, () => queryCollection('docs').path(path).first())
 
 useSeoMeta({
     title: data.value?.title,
