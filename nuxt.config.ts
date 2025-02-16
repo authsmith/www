@@ -5,6 +5,11 @@ export default defineNuxtConfig({
       link: [{ rel: "icon", type: "image/png", href: "/logo.png" }],
     },
   },
+  hooks: {
+    "prerender:routes"({ routes }) {
+      routes.clear(); // Do not generate any routes (except the defaults)
+    },
+  },
   nitro: {
     preset: "cloudflare-pages",
   },
