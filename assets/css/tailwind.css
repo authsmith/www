@@ -89,7 +89,7 @@ pre code {
     border: #ffffff40 solid thin;
     display: block;
     box-sizing: border-box;
-    overflow: hidden;
+    overflow: scroll;
     padding-block: 10px;
 }
 
