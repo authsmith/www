@@ -11,6 +11,7 @@
     "wrangler::dev": "pnpm run generate && pnpm x wrangler pages dev .output/public/"
   },
   "dependencies": {
+    "@libsql/client": "^0.14.0",
     "@nuxt/content": "latest",
     "@nuxtjs/google-fonts": "3.2.0",
     "@nuxtjs/sitemap": "7.2.3",

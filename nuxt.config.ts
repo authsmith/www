@@ -32,8 +32,9 @@ export default defineNuxtConfig({
       },
     },
     database: {
-      type: "d1",
-      binding: "AUTHSMITH_D1",
+      type: "libsql",
+      url: process.env.TURSO_DATABASE_URL!,
+      authToken: process.env.TURSO_AUTH_TOKEN!,
     },
   },
   devtools: { enabled: true },
