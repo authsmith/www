@@ -10,6 +10,13 @@ export default defineNuxtConfig({
   },
   compatibilityDate: "2024-11-01",
   content: {
+    watch: {
+      ws: {
+        // @ts-ignore
+        port: 4000,
+        showURL: true,
+      },
+    },
     build: {
       markdown: {
         highlight: {
