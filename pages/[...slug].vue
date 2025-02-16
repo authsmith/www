@@ -4,10 +4,6 @@ import { defineWebPage, defineWebSite, useSchemaOrg } from '@unhead/schema-org/v
 const route = useRoute()
 const path = route.params.slug === "" ? "/" : `/${route.params.slug}`
 const { data } = await useAsyncData(() => queryCollection('content').path(path).first())
-
-definePageMeta({
-    layout: "root",
-});
 useSeoMeta({
     title: data.value?.title,
     description: data.value?.description

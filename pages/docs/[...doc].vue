@@ -7,9 +7,6 @@ const { data } = await useAsyncData(() => queryCollection('docs').path(path).fir
     watch: [route]
 })
 
-definePageMeta({
-    layout: "docs",
-});
 useSeoMeta({
     title: data.value?.title,
     description: data.value?.description
