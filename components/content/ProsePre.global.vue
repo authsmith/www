@@ -45,7 +45,7 @@ const copyCode = (): void => {
     <div class="relative w-full">
         <div class="flex items-center justify-between">
             <div class="filename">
-                <span v-if="props.filename" class="leading-none">{{ filename }}</span>
+                <span v-if="props.filename" class="leading-none text-primary">>>> {{ filename }}</span>
             </div>
             <span class="text-[9px] leading-none uppercase">
                 {{ props.language }}

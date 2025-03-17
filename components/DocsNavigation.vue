@@ -23,6 +23,23 @@ const routes = [
                         type: 'internalLink',
                     },
                     {
+                        label: 'Setup',
+                        path: '/docs/plugins/payload/setup',
+                        type: 'directory',
+                        tree: [
+                            {
+                                label: 'Admin',
+                                path: '/docs/plugins/payload/setup/admin',
+                                type: 'internalLink',
+                            },
+                            {
+                                label: 'Front-end/App',
+                                path: '/docs/plugins/payload/setup/app',
+                                type: 'internalLink',
+                            },
+                        ]
+                    },
+                    {
                         label: 'Configuration',
                         path: '/docs/plugins/payload/configuration',
                         type: 'internalLink',
