@@ -12,6 +12,13 @@ seo:
 Authenticate using Auth0 OAuth provider.
 
 <br/>
+**Callback or Redirect URL pattern**
+
+- For Admin: [https://example.com/api/admin/oauth/callback/auth0]{.text-primary}
+
+- For App: [https://example.com/api/{app_name}/oauth/callback/auth0]{.text-primary}
+
+<br/>
 
 ```ts [src/payload.config.ts] {3, 11-15}
 import { buildConfig } from "payload/config";

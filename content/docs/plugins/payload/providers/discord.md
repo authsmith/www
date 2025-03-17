@@ -12,6 +12,13 @@ seo:
 Authenticate using Discord OAuth provider.
 
 <br/>
+**Callback or Redirect URL pattern**
+
+- For Admin: [https://example.com/api/admin/oauth/callback/discord]{.text-primary}
+
+- For App: [https://example.com/api/{app_name}/oauth/callback/discord]{.text-primary}
+
+<br/>
 
 ```ts [src/payload.config.ts] {3, 11-14}
 import { buildConfig } from "payload/config";

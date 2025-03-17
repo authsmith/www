@@ -12,6 +12,13 @@ seo:
 Authenticate using AWS Cognito OAuth provider.
 
 <br/>
+**Callback or Redirect URL pattern**
+
+- For Admin: [https://example.com/api/admin/oauth/callback/cognito]{.text-primary}
+
+- For App: [https://example.com/api/{app_name}/oauth/callback/cognito]{.text-primary}
+
+<br/>
 
 ```ts [src/payload.config.ts] {3, 11-16}
 import { buildConfig } from "payload/config";

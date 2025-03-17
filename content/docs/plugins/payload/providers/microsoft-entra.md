@@ -12,6 +12,13 @@ seo:
 Authenticate using Microsoft Entra OAuth provider.
 
 <br/>
+**Callback or Redirect URL pattern**
+
+- For Admin: [https://example.com/api/admin/oauth/callback/msft-entra]{.text-primary}
+
+- For App: [https://example.com/api/{app_name}/oauth/callback/msft-entra]{.text-primary}
+
+<br/>
 
 ```ts [src/payload.config.ts] {3, 11-15}
 import { buildConfig } from "payload/config";

@@ -13,6 +13,14 @@ Authenticate using Apple OAuth provider. Supports both OIDC and OAuth2 protocols
 
 <br/>
 
+**Callback or Redirect URL pattern**
+
+- For Admin: [https://example.com/api/admin/oauth/callback/apple]{.text-primary}
+
+- For App: [https://example.com/api/{app_name}/oauth/callback/apple]{.text-primary}
+
+<br/>
+
 **For OAuth2**
 
 ```ts [src/payload.config.ts] {3, 11-14}
