@@ -44,12 +44,13 @@ const copyCode = (): void => {
 <template>
     <div class="relative w-full">
         <div class="flex items-center justify-between">
-            <div class="filename">
-                <span v-if="props.filename" class="leading-none text-primary">>>> {{ filename }}</span>
+            <div class="filename border border-white/30 pt-2 pb-2 bg-dark px-2 border-b-0 space-x-2">
+                <span class="text-[9px] leading-none uppercase bg-primary text-dark font-bold p-1">
+                    {{ props.language }}
+                </span>
+                <span v-if="props.filename" class="leading-none text-light"> {{ filename }}</span>
             </div>
-            <span class="text-[9px] leading-none uppercase">
-                {{ props.language }}
-            </span>
+
         </div>
         <button v-if="!codeCopied" class="absolute top-[54px] right-3" @click="copyCode">
             <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -65,7 +66,7 @@ const copyCode = (): void => {
                     fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path>
             </svg>
         </button>
-        <pre :class="$props.class" class="leading-none">
+        <pre :class="$props.class" class="leading-none -mt-[13px]">
             <slot/>
         </pre>
     </div>

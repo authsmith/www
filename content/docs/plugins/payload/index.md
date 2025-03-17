@@ -52,4 +52,16 @@ For every provider with different protocols, the endpoints are already configure
 [1.3. Session]{.content-title}
 
 Payload has exposed ways to use their inbuilt session mechanism to tweak it the way you need. It is helpful to understand and tailor the user session and extend it if needed. To keep things simple and even, the core of the plugin uses Payload session.
+
+<br/>
+<br/>
+<br/>
+
+::div{ .flex .items-center .justify-between}
+[&laquo; Plugins](/docs/plugins){.doc-nav}
+
+[Installation &raquo;](/docs/plugins/payload/installation){.doc-nav}
+
+::
+
 ::

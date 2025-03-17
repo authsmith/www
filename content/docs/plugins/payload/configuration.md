@@ -20,9 +20,6 @@ Payload Auth Plugin configuration options.
 ○ [providers](#options-providers){.link-highlight} **_Array_**
 <br/>
 
-○ [successPath](#options-successPath){.link-highlight} **_string_**
-<br/>
-
 ○ [allowSignUp](#options-allowSignUp){.link-highlight} **_boolean_**
 <br/>
 ::
@@ -69,26 +66,6 @@ Payload Auth Plugin configuration options.
         client_secret: "GOOGLE_CLIENT_SECRET"
     })
   ];
-}
-```
-
-<br/>
-
-[successPath]{.content-title #options-successPath}
-<br/>
-
-**Type:** string
-
-**Description:** Path to redirect users on successful sign-in.
-
-**Default:** "/admin"
-
-**Optional:** Yes.
-<br/>
-
-```ts
-{
-  successPath: "/{my-success-path}";
 }
 ```
 

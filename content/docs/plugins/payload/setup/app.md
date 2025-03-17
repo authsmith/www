@@ -247,9 +247,9 @@ export default AuthPage;
 <br/>
 
 ::div{ .flex .items-center .justify-between}
-[&laquo; Setup](/docs/plugins/payload/setup){.doc-nav}
+[&laquo; Admin](/docs/plugins/payload/setup/admin){.doc-nav}
 
-[App &raquo;](/docs/plugins/payload/setup/app){.doc-nav}
+[Configuration &raquo;](/docs/plugins/payload/configuration){.doc-nav}
 
 ::
 
