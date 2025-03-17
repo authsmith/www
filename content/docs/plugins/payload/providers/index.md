@@ -56,6 +56,9 @@ Payload Auth Plugin supports many OAuth providers, and some additional providers
 <br/>
 
 ::list
+○ [Password](/docs/plugins/payload/providers/password){.link-highlight}
+<br/>
+
 ○ [Passkey](/docs/plugins/payload/providers/passkey){.link-highlight}
 <br/>
 

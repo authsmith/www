@@ -34,6 +34,7 @@ export default defineNuxtConfig({
             "js",
             "css",
             "java",
+
             "groovy",
             "sql",
             "xml",

@@ -105,6 +105,11 @@ const routes = [
                                 type: 'internalLink',
                             },
                             {
+                                label: 'Password',
+                                path: '/docs/plugins/payload/providers/password',
+                                type: 'internalLink',
+                            },
+                            {
                                 label: 'Slack',
                                 path: '/docs/plugins/payload/providers/slack',
                                 type: 'internalLink',
