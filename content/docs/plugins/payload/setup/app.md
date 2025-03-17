@@ -188,7 +188,8 @@ export default buildConfig({
 
 ::div{.pl-4}
 
-**4.1 Create a new file to implement auth flows**
+**4.1 Sign-in**
+Create a new file to implement auth flows
 
 ```tsx [src/lib/auth.ts]
 import { appClient } from "payload-auth-plugin/client";
@@ -206,7 +207,7 @@ export const onGoogleAppSignin = () => {
 };
 ```
 
-**4.2. Auth Page**
+`name` should be same as the name that is passed on to the `appAuthPlugin`.
 
 Now, create a new auth page for sign-in/sign-up and import the Google sign-in function.
 
@@ -238,6 +239,39 @@ const AuthPage = () => {
 };
 
 export default AuthPage;
+```
+
+**4.2 Get User**
+
+```ts [src/lib/auth.ts]
+"use client";
+import React, { useEffect } from "react";
+import { getCurrentUser } from "payload-auth-plugin/client/hooks";
+
+export const getUser = () => {
+  const res = await getCurrentUser({ name: "app" }, { fields: ["email"] });
+  return res;
+};
+```
+
+`fields` is an array of users collection field names that you want to access.
+
+<br/>
+
+**4.3 Refresh Session**
+
+Refresh the user session before it expires
+
+```ts [src/lib/auth.ts]
+"use client";
+import { appClient } from "payload-auth-plugin/client";
+
+const { refresh } = appClient({ name: "app" });
+
+export const handleRefresh = async () => {
+  const res = await refresh();
+  return res;
+};
 ```
 
 ::
