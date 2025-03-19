@@ -55,7 +55,7 @@ import { CollectionConfig } from "payload";
 import { withAppUsersCollection } from "payload-auth-plugin/collection";
 import { deleteLinkedAccounts } from "payload-auth-plugin/collection/hooks";
 
-export const AppAccounts: CollectionConfig = withAppUsersCollection({
+export const AppUsers: CollectionConfig = withAppUsersCollection({
   slug: "appUsers",
   admin: {
     defaultColumns: ["name"],
@@ -116,7 +116,7 @@ export default buildConfig({
   plugins: [
     // --- rest of the plugins
     appAuthPlugin({
-        secret: process.env.APP_AUTH_SECRET as string;
+        secret: process.env.APP_AUTH_SECRET as string,
     }),
   ],
 });
@@ -141,7 +141,7 @@ export default buildConfig({
   plugins: [
     // --- rest of the plugins
     appAuthPlugin({
-        secret: process.env.APP_AUTH_SECRET as string;
+        secret: process.env.APP_AUTH_SECRET as string,
         usersCollectionSlug: AppUsers.slug,
         accountsCollectionSlug: AppAccounts.slug,
     }),
@@ -167,7 +167,7 @@ export default buildConfig({
   plugins: [
     // --- rest of the plugins
     appAuthPlugin({
-        secret: process.env.APP_AUTH_SECRET as string;
+        secret: process.env.APP_AUTH_SECRET as string,
         usersCollectionSlug: AppUsers.slug,
         accountsCollectionSlug: AppAccounts.slug,
         providers: [
