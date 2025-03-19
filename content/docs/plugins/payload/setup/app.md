@@ -184,6 +184,12 @@ export default buildConfig({
 <br/>
 <br/>
 
+> [!NOTE]
+> Don't forget to add add `AppUsers` and `AppAccounts` to `collections` in `payload.config.ts`
+
+<br/>
+<br/>
+
 **4. Client Components**
 
 ::div{.pl-4}
