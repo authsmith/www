@@ -79,13 +79,17 @@ Use the `withAppAccountCollection` function exported by the plugin. This functio
 ```ts [src/collections/Auth/App/Account.ts]
 import { CollectionConfig } from "payload";
 import { withAppAccountCollection } from "payload-auth-plugin/collection";
+import { AppUsers } from "@/collections/Auth/App/User";
 
-export const AppAccounts: CollectionConfig = withAppAccountCollection({
-  slug: "appAccounts",
-  admin: {
-    useAsTitle: "id",
+export const AppAccounts: CollectionConfig = withAppAccountCollection(
+  {
+    slug: "appAccounts",
+    admin: {
+      useAsTitle: "id",
+    },
   },
-});
+  AppUsers.slug
+);
 ```
 
 ::blockquote
@@ -116,7 +120,7 @@ export default buildConfig({
   plugins: [
     // --- rest of the plugins
     appAuthPlugin({
-        secret: process.env.APP_AUTH_SECRET as string,
+      secret: process.env.APP_AUTH_SECRET as string,
     }),
   ],
 });
@@ -141,9 +145,9 @@ export default buildConfig({
   plugins: [
     // --- rest of the plugins
     appAuthPlugin({
-        secret: process.env.APP_AUTH_SECRET as string,
-        usersCollectionSlug: AppUsers.slug,
-        accountsCollectionSlug: AppAccounts.slug,
+      secret: process.env.APP_AUTH_SECRET as string,
+      usersCollectionSlug: AppUsers.slug,
+      accountsCollectionSlug: AppAccounts.slug,
     }),
   ],
 });
@@ -167,15 +171,15 @@ export default buildConfig({
   plugins: [
     // --- rest of the plugins
     appAuthPlugin({
-        secret: process.env.APP_AUTH_SECRET as string,
-        usersCollectionSlug: AppUsers.slug,
-        accountsCollectionSlug: AppAccounts.slug,
-        providers: [
-            GoogleAuthProvider({
-                client_id: process.env.GOOGLE_PROVIDER_CLIENT_ID as string,
-                client_secret: process.env.GOOGLE_PROVIDER_CLIENT_SECRET as string,
-            }),
-        ],
+      secret: process.env.APP_AUTH_SECRET as string,
+      usersCollectionSlug: AppUsers.slug,
+      accountsCollectionSlug: AppAccounts.slug,
+      providers: [
+        GoogleAuthProvider({
+          client_id: process.env.GOOGLE_PROVIDER_CLIENT_ID as string,
+          client_secret: process.env.GOOGLE_PROVIDER_CLIENT_SECRET as string,
+        }),
+      ],
     }),
   ],
 });
