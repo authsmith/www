@@ -72,7 +72,7 @@ To store the account meta information provided by an auth provider that a user h
 
 <br/>
 
-Use the `withAppAccountCollection` function exported by the plugin. This function takes the `CollectionConfig` as an argument, you can easily customize the collection configuration as you like and also keep the default setup required by the plugin intact.
+Use the `withAppAccountCollection` function exported by the plugin. This function takes the `CollectionConfig` and Users collection slug for the arguments, you can easily customize the collection configuration as you like and also keep the default setup required by the plugin intact.
 
 <br/>
 

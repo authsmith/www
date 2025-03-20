@@ -38,15 +38,19 @@ To store the account meta information that a user has used to signin/signup into
 
 <br/>
 
-Use the `withAdminAccountCollection` function exported by the plugin. This function takes the `CollectionConfig` as an argument, you can easily customize the collection configuration as you like and also keep the default setup required by the plugin intact.
+Use the `withAdminAccountCollection` function exported by the plugin. This function takes the `CollectionConfig` and Users collection slug for the arguments, you can easily customize the collection configuration as you like and also keep the default setup required by the plugin intact.
 
 ```ts [src/collections/Auth/Admin/Account.ts]
 import { CollectionConfig } from "payload";
 import { withAdminAccountCollection } from "payload-auth-plugin/collection";
+import { Users } from "@/collections/Users";
 
-export const AdminAccounts: CollectionConfig = withAdminAccountCollection({
-  slug: "adminAccounts",
-});
+export const AdminAccounts: CollectionConfig = withAdminAccountCollection(
+  {
+    slug: "adminAccounts",
+  },
+  Users.slug
+);
 ```
 
 ::blockquote
