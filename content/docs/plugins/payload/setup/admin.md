@@ -165,8 +165,10 @@ const { signin } = adminClient();
 export const AuthComponent = () => {
   const router = useRouter();
 
-  const handleGoogleSignin = () => {
-    const { data, message, isSuccess, isError } = signin().oauth("google");
+  const handleGoogleSignin = async () => {
+    const { data, message, isSuccess, isError } = await signin().oauth(
+      "google"
+    );
     if (isError) {
       console.log(message);
     }

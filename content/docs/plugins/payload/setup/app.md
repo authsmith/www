@@ -206,8 +206,8 @@ import { appClient } from "payload-auth-plugin/client";
 
 const { signin } = appClient({ name: "app" });
 
-export const onGoogleAppSignin = () => {
-  const { data, message, isSuccess, isError } = signin().oauth("google");
+export const onGoogleAppSignin = async () => {
+  const { data, message, isSuccess, isError } = await signin().oauth("google");
   return {
     data,
     message,
@@ -232,8 +232,8 @@ import { useRouter } from "next/navigation";
 const AuthPage = () => {
   const router = useRouter();
 
-  const handleOauthSignin = () => {
-    const { data, message, isSuccess, isError } = onGoogleAppSignin();
+  const handleOauthSignin = async () => {
+    const { data, message, isSuccess, isError } = await onGoogleAppSignin();
     if (isError) {
       console.log(message);
     }
