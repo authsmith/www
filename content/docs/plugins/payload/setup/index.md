@@ -12,11 +12,34 @@ The Payload app has both admin and front-end in a single NextJS project, this pl
 
 <br/>
 
-In near future releases, this plugin will also support authentication for front-end apps outside Payload.
+**NextJS config**
+
+If you are using OAuth providers then it is mandatory to add a header to the `nextConfig`. This is a workaround and can be removed in future.
 
 <br/>
 
-Check out the setup for both plugins
+```ts [next.config.js] {10, 3-13}
+const nextConfig = {
+  //--- rest of the config
+  async headers() {
+    return [
+      {
+        source: "/(.*)",
+        headers: [
+          {
+            key: "Cross-Origin-Opener-Policy",
+            value: "same-origin-allow-popups",
+          },
+        ],
+      },
+    ];
+  },
+};
+```
+
+<br/>
+
+In near future releases, this plugin will also support authentication for front-end apps outside Payload.
 
 <br/>
 <br/>
