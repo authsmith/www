@@ -43,7 +43,7 @@ If you already have a collection with the slug `accounts`, it can cause a confli
 <br/>
 [1.2. Endpoints]{.content-title}
 
-Payload 3.0 is built on top of [NextJS](https://nextjs.org/){.link-highlight} framework, and there are two sides to this application. One is `admin` and another is `frontend`. This plugin right now enables authentication for the `admin` side but soon it will also support authentication for the `frontend` side.
+Payload 3.0 is built on top of [NextJS](https://nextjs.org/){.link-highlight} framework, and there are two sides to this application. One is `admin` and another is `frontend`.
 <br/>
 <br/>
 For every provider with different protocols, the endpoints are already configured in the plugin. It creates catchl-all segement route and process all requests and responses that directly invokes the plugin core and handles the authentication.
