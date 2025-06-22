@@ -1,36 +1,41 @@
 <script setup lang="ts">
-import { defineWebPage, defineWebSite, useSchemaOrg } from '@unhead/schema-org/vue'
+import {
+    defineWebPage,
+    defineWebSite,
+    useSchemaOrg,
+} from "@unhead/schema-org/vue";
 
-const route = useRoute()
-prerenderRoutes(route.path)
-const path = route.path
-const { data } = await useAsyncData(path, () => queryCollection('docs').path(path).first())
+const route = useRoute();
+prerenderRoutes(route.path);
+const path = route.path;
+const { data } = await useAsyncData(path, () =>
+    queryCollection("docs").path(path).first(),
+);
 
 useSeoMeta({
     title: data.value?.title,
-    description: data.value?.description
-})
-defineOgImageComponent('Page', {
+    description: data.value?.description,
+});
+defineOgImageComponent("Page", {
     title: data.value?.seo.title,
-    description: data.value?.seo.description
-})
+    description: data.value?.seo.description,
+});
 useHead({
     templateParams: {
         schemaOrg: {
-            host: 'https://authsmith.com',
+            host: "https://authsmith.com",
             path: route.path,
-            inLanguage: 'en',
-        }
-    }
-})
+            inLanguage: "en",
+        },
+    },
+});
 useSchemaOrg([
     defineWebPage(),
     defineWebSite({
         title: data.value?.seo.title,
         description: data.value?.seo.description,
     }),
-])
-
+]);
 </script>
 
 <template>
@@ -38,7 +43,7 @@ useSchemaOrg([
         <div class="lg:col-span-2">
             <DocsNavigation />
         </div>
-        <div class="pt-6 lg:pt-0 lg:col-span-7">
+        <div class="pt-6 lg:pt-0 lg:col-span-7 content">
             <ContentRenderer v-if="data" :value="data" />
             <div v-else>Work In Progress</div>
         </div>

@@ -8,11 +8,7 @@ seo:
 
 ::section
 
-[Installation]{.content-title}
-<br/>
-<br/>
-
-**Install the package**
+# Installation
 
 The plugin is available on [NPM](https://www.npmjs.com/package/payload-auth-plugin). Use the following command to install it in your Payload CMS project:
 <br/>

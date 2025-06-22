@@ -66,7 +66,8 @@ export default defineNuxtConfig({
   googleFonts: {
     display: "swap",
     families: {
-      "Martian Mono": "100..800",
+      "Bricolage Grotesque": "200..800",
+      "JetBrains Mono": "100..800",
     },
   },
 });

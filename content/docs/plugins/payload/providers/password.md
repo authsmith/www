@@ -6,34 +6,32 @@ seo:
   description: "Payload CMS auth plugin Password provider"
 ---
 
-::section
-[Password Provider]{.content-title}
+## Password Provider
 
 Use password based authentication flow for sign-in and sign-ups.
 
-::blockquote
-
-**_NOTE_:** This provider is only available for App plugin, not for Admin plugin.
-::
-
 <br/>
 <br/>
-
-**Usage**
-
 <br/>
 
 ```ts [src/payload.config.ts]
 import { buildConfig } from "payload/config";
-import { appAuthPlugin } from "payload-auth-plugin";
+import { authPlugin } from "payload-auth-plugin";
 import { PasswordProvider } from "payload-auth-plugin/providers";
 
 export default buildConfig({
   // --- rest of the config
   plugins: [
     // --- rest of the plugins
-    appAuthPlugin({
-      providers: [PasswordProvider()],
+    authPlugin({
+      // --- rest of the plugin configuration
+      providers: [
+        PasswordProvider({
+          emailTemplates: {
+            forgotPassword: renderForgotPasswordTemplate,
+          }
+        })
+      ],
     }),
   ],
 });
@@ -41,354 +39,138 @@ export default buildConfig({
 
 <br/>
 
-**Sign up**
 
-Use email and password to sign-up.
+### Args
+
+- **emailTemplates**
+
+**Type:** `{forgotPassword: any}` 
+
+**Description:** takes email templates for the password provider to use
+
+**Optional**: Yes
+
+<br/>
+<br/>
+
+### Auth Client
+
+```ts [src/lib/auth.ts]
+import { AuthClient } from 'payload-auth-plugin/client'
+
+export const appAuthClient = new AuthClient('app')
+```
 
 <br/>
 
-```ts [src/lib/auth.ts]
-import { appClient } from "payload-auth-plugin/client";
+### Signup
 
-const { signup } = appClient({ name: "app" });
+Use the auth client for signup
 
-interface Signup {
-  email: string;
-  password: string;
-  profile?: Record<string, any>;
-}
+<br/>
 
-export const handleSignup = async (value: Signup) => {
-  const { password } = signup();
-  const response = await password(value);
-  return response;
-};
-```
+```ts [src/app/(frontend)/auth/signup/page.tsx]
+import { appAuthClient } from '@/lib/auth';
 
-**Parameter**
+const { password } = appAuthClient.register()
 
-• **email**
-
-::div{.pl-4}
-**Type:** **_string_**
-
-**Description:** `email` is required for sign-up. It should be unique and non-existing in the application.
-
-**Optional:** No.
-
-```ts
-{
-  email: "";
+const handleSignup = async (value: {
+  email: string, 
+  password: string, 
+  first_name: string, 
+  last_name: string
+}) => {
+    const res = await password({
+      email: value.email,
+      password: value.password,
+      userInfo: {
+        first_name: value.first_name,
+        last_name: value.last_name,
+      },
+      allowAutoSignin: true,
+    })
+    if (res.isError) {
+      console.error(res.message)
+    }
 }
 ```
 
-::
+<br/>
 
-• **password**
+### Signin
 
-::div{.pl-4}
-**Type:** **_string_**
+Use the auth client for signin
 
-**Description:** `password` is required for sign-up.
+<br/>
 
-**Optional:** No.
+```ts [src/app/(frontend)/auth/signin/page.tsx]
+import { appAuthClient } from '@/lib/auth';
 
-```ts
-{
-  password: "";
+const { password } = appAuthClient.signin()
+
+const handleSignin = async (value:{
+email: string,
+password: string,
+}) => {
+    const res = await password({ email: value.email, password: value.password })
+    if (res.isError) {
+      console.error(res.message)
+    }
 }
 ```
 
-::
+<br/>
 
-• **profile**
+### Forgot Password
 
-::div{.pl-4}
-**Type:** **_Record<string,any>_**
+Use the auth client for forgot-password
 
-**Description:** `profile` is an object which can be any extra attribute that you want to store in the User collection when the user sign-up like avatar, name, and etc.
+<br/>
 
-**Optional:** Yes.
+```ts [src/app/(frontend)/auth/forgot-password/page.tsx]
+import { appAuthClient } from '@/lib/auth';
 
-```ts
-{
-  profile: {
+const handleForgotPassword = async (value: {
+email: string
+}) => {
+  const res = await appAuthClient.forgotPassword({
+    email: value.email,
+  })
+  if (res.isError) {
+    console.error(res.message)
+  }
+  if (res.isSuccess) {
+    console.log(res.message)
   }
 }
 ```
 
-::
+> **NOTE:** To use the forgot password method, it is required to setup the [email functionality](https://payloadcms.com/docs/email/overview) in the Payload app to send out verification links to restore the password. Start with this [verification email template](https://github.com/authsmith/payload-auth-plugin/blob/main/examples/with-website/src/templates/forgot-password.tsx) and customise it as you want. The template is created using React Email
 
 <br/>
 
-**Sign in**
+### Restore Password
 
-Use email and password to sign-in.
-
-<br/>
-
-```ts [src/lib/auth.ts]
-import { appClient } from "payload-auth-plugin/client";
-
-const { signin } = appClient({ name: "app" });
-
-interface Signin {
-  email: string;
-  password: string;
-}
-
-export const handleSignin = async (value: Signin) => {
-  const { password } = signin();
-  const response = await password(value);
-  return response;
-};
-```
-
-**Parameter**
-
-• **email**
-
-::div{.pl-4}
-**Type:** **_string_**
-
-**Description:** `email` is required for sign-in. It should be unique and existing in the application.
-
-**Optional:** No.
-
-```ts
-{
-  email: "";
-}
-```
-
-::
-
-• **password**
-
-::div{.pl-4}
-**Type:** **_string_**
-
-**Description:** `password` is required for sign-in.
-
-**Optional:** No.
-
-```ts
-{
-  password: "";
-}
-```
-
-::
+Use the auth client for restore password
 
 <br/>
 
-**Forgot Password**
+```ts [src/app/(frontend)/auth/restore-password/page.tsx]
+import { appAuthClient } from '@/lib/auth';
 
-Use email to start password recovery process. It is required to have the [email adapters]("https://payloadcms.com/docs/email/overview"){.link-highlight} setup in Payload to send recovery code via an email.
-
-<br/>
-
-```ts [src/lib/auth.ts]
-import { appClient } from "payload-auth-plugin/client";
-
-const { forgotPassword } = appClient({ name: "app" });
-
-export const handleForgotPassword = async (email: string) => {
-  const response = await forgotPassword({ email });
-  return response;
-};
-```
-
-**Parameter**
-
-• **email**
-
-::div{.pl-4}
-**Type:** **_string_**
-
-**Description:** `email` is required for initiating the password recovery process.
-
-**Optional:** No.
-
-```ts
-{
-  email: "";
+const handleRestorePassword = async (value: {
+  code: string,
+  password: string
+}) => {
+  const res = await appAuthClient.recoverPassword({
+    password: value.password,
+    code: value.code,
+  })
+  if (res.isError) {
+    console.error(res.message)
+  }
+  if (res.isSuccess) {
+    console.log(res.message)
+  }
 }
 ```
-
-::
-
-<br/>
-
-**Recover Password**
-
-Recover password using the code sent to via an email.
-
-<br/>
-
-```ts [src/lib/auth.ts]
-import { appClient } from "payload-auth-plugin/client";
-
-const { passwordRecover } = appClient({ name: "app" });
-
-interface PasswordRecover {
-  email: string;
-  password: string;
-  code: string;
-}
-
-export const handleRecoverPassword = async (value: PasswordRecover) => {
-  const response = await passwordRecover(value);
-  return response;
-};
-```
-
-**Parameter**
-
-• **email**
-
-::div{.pl-4}
-**Type:** **_string_**
-
-**Description:** `email` is required and should be same as the email used for initiating password recovery process.
-
-**Optional:** No.
-
-```ts
-{
-  email: "";
-}
-```
-
-::
-
-• **password**
-
-::div{.pl-4}
-**Type:** **_string_**
-
-**Description:** `password` a new password to set.
-
-**Optional:** No.
-
-```ts
-{
-  password: "";
-}
-```
-
-::
-
-• **code**
-
-::div{.pl-4}
-**Type:** **_string_**
-
-**Description:** `code` sent via an email.
-
-**Optional:** No.
-
-```ts
-{
-  code: "";
-}
-```
-
-::
-
-<br/>
-
-**Reset Password**
-
-Reset password when the user is having an active authenticated session.
-
-<br/>
-
-```ts [src/lib/auth.ts]
-import { appClient } from "payload-auth-plugin/client";
-
-const { resetPassword } = appClient({ name: "app" });
-
-interface PasswordReset {
-  email: string;
-  currentPassword: string;
-  newPassword: string;
-}
-
-export const handleResetPassword = async (value: PasswordReset) => {
-  const response = await resetPassword(value);
-  return response;
-};
-```
-
-**Parameter**
-
-• **email**
-
-::div{.pl-4}
-**Type:** **_string_**
-
-**Description:** `email` is required.
-
-**Optional:** No.
-
-```ts
-{
-  email: "";
-}
-```
-
-::
-
-• **currentPassword**
-
-::div{.pl-4}
-**Type:** **_string_**
-
-**Description:** user has to provide the `currentPassword` to verify user is authentic
-
-**Optional:** No.
-
-```ts
-{
-  currentPassword: "";
-}
-```
-
-::
-
-• **newPassword**
-
-::div{.pl-4}
-**Type:** **_string_**
-
-**Description:** user has to provide the `newPassword` to replace the `currentPassword`
-
-**Optional:** No.
-
-```ts
-{
-  newPassword: "";
-}
-```
-
-::
-
-• **signoutOnUpdate**
-
-::div{.pl-4}
-**Type:** **_boolean_**
-
-**Description:** Immediately sign-out user after successfully reseting the password.
-
-**Optional:** Yes.
-
-```ts
-{
-  signoutOnUpdate: true;
-}
-```
-
-::
-
-::

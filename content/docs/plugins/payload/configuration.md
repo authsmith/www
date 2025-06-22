@@ -6,30 +6,10 @@ seo:
   description: "Payload CMS auth plugin configuration"
 ---
 
-::section
-Payload Auth Plugin configuration options.
-<br/>
-<br/>
-[PluginOptions]{.content-title}
-<br/>
+# Payload Auth Plugin configuration
 
-::list
-○ [enabled](#options-enabled){.link-highlight} **_boolean_**
-<br/>
 
-○ [providers](#options-providers){.link-highlight} **_Array_**
-<br/>
-
-○ [allowSignUp](#options-allowSignUp){.link-highlight} **_boolean_**
-<br/>
-::
-
-<br/>
-<br/>
-
-::div{.pl-4}
-[enabled]{.content-title #options-enabled}
-<br/>
+#### enabled
 
 **Type:** boolean
 
@@ -37,7 +17,8 @@ Payload Auth Plugin configuration options.
 
 **Default:** true
 
-**Optional:** Yes.
+**Optional:** Yes
+
 <br/>
 
 ```ts
@@ -48,39 +29,116 @@ Payload Auth Plugin configuration options.
 
 <br/>
 
-[providers]{.content-title #options-providers}
+#### name
+
+**Type:** string
+
+**Description:** A unique name that can be used to create endpoints and sessions. Example: "storefront", "admin", or "console"
+
+**Optional:** No
+
 <br/>
+
+```ts
+{
+  name: "some-app-name";
+}
+```
+
+<br/>
+
+#### useAdmin
+
+**Type:** boolean
+
+**Description:** Set to true if the plugin is to be used for admin app authentication.
+
+**Optional:** Yes
+
+<br/>
+
+```ts
+{
+  useAdmin: true;
+}
+```
+
+<br/>
+
+#### usersCollectionSlug
+
+**Type:** string
+
+**Description:** Set the users collection slug to be used by the plugin
+
+**Optional:** No
+
+<br/>
+
+```ts
+{
+  usersCollectionSlug: "users";
+}
+```
+
+<br/>
+
+#### accountsCollectionSlug
+
+**Type:** string
+
+**Description:** Set the accounts collection slug to be used by the plugin
+
+**Optional:** No
+
+<br/>
+
+```ts
+{
+  accountsCollectionSlug: "accounts";
+}
+```
+
+<br/>
+
+#### providers
 
 **Type:** Array
 
-**Description:** Array of OAuth or Passkey providers.
+**Description:** Array of providers(OAuth, Password, and Passkey).
 
-**Optional:** No.
+**Optional:** No
+
 <br/>
 
 ```ts
 {
   providers: [
     GoogleAuthProvider({
-        client_id: "GOOGLE_CLIENT_ID"
+        client_id: "GOOGLE_CLIENT_ID",
         client_secret: "GOOGLE_CLIENT_SECRET"
-    })
+    }),
+    PasswordProvider({
+      emailTemplates: {
+        forgotPassword: renderForgotPasswordTemplate,
+      },
+    }),
   ];
 }
 ```
 
 <br/>
 
-[allowSignUp]{.content-title #options-allowSignUp}
-<br/>
+#### allowOAuthAutoSignUp
 
 **Type:** boolean
 
-**Description:** Allows auto sign up and creates user in the collection if doesn't exist. **This should be used at the admin's discretion.**
+**Description:** Allows automatic sign-up when using any OAuth provider.. **This should be used at the admin's discretion.**
 
 **Default:** false
 
-**Optional:** Yes.
+**Optional:** Yes
+
 <br/>
 
 ```ts
@@ -89,6 +147,49 @@ Payload Auth Plugin configuration options.
 }
 ```
 
-::
+<br/>
+
+#### successRedirectPath
+
+**Type:** string
+
+**Description:** A path to redirect the user after successful signin
+
+**Optional:** No
+
+<br/>
+
+```ts
+{
+  successRedirectPath: "/some-path";
+}
+```
+
+<br/>
+
+#### errorRedirectPath
+
+**Type:** string
+
+**Description:** A path to redirect the user when error occurs
+
+**Optional:** No
+
+<br/>
+
+```ts
+{
+  errorRedirectPath: "/some-path";
+}
+```
+
+<br/>
+<br/>
+<br/>
+
+::div{ .flex .items-center .justify-between}
+[&laquo; Setup](/docs/plugins/payload/setup)
+
+[Providers &raquo;](/docs/plugins/payload/providers)
 
 ::

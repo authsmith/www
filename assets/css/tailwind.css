@@ -14,8 +14,7 @@
 *,
 html,
 body {
-    font-family: 'Martian Mono', Courier, monospace;
-    line-height: 26px;
+    font-family: "Bricolage Grotesque", Courier, monospace;
 }
 
 body::selection {
@@ -34,9 +33,9 @@ body::selection {
 ::-webkit-scrollbar-thumb,
 ::-webkit-scrollbar-thumb:horizontal {
     border-radius: 0px;
-    border: 1px solid #D9D9D920;
+    border: 1px solid #d9d9d920;
     background-clip: content-box;
-    background: #D9D9D920;
+    background: #d9d9d920;
 }
 
 ::-webkit-scrollbar-corner,
@@ -53,44 +52,158 @@ input::-webkit-inner-spin-button {
 
 .dashed-border {
     background-image:
-        repeating-linear-gradient(0deg, transparent, transparent 12px, transparent 12px, transparent 16px),
-        repeating-linear-gradient(90deg, transparent, transparent 12px, transparent 12px, transparent 16px),
-        repeating-linear-gradient(180deg, #ffffff40, #ffffff40 12px, transparent 12px, transparent 16px),
-        repeating-linear-gradient(90deg, transparent, transparent 12px, transparent 12px, transparent 16px);
-    background-size: 1px 100%, 100% 1px, 1px 100%, 100% 1px;
-    background-position: 0 0, 0 0, 100% 0, 0 100%;
+        repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 12px,
+            transparent 12px,
+            transparent 16px
+        ),
+        repeating-linear-gradient(
+            90deg,
+            transparent,
+            transparent 12px,
+            transparent 12px,
+            transparent 16px
+        ),
+        repeating-linear-gradient(
+            180deg,
+            #ffffff40,
+            #ffffff40 12px,
+            transparent 12px,
+            transparent 16px
+        ),
+        repeating-linear-gradient(
+            90deg,
+            transparent,
+            transparent 12px,
+            transparent 12px,
+            transparent 16px
+        );
+    background-size:
+        1px 100%,
+        100% 1px,
+        1px 100%,
+        100% 1px;
+    background-position:
+        0 0,
+        0 0,
+        100% 0,
+        0 100%;
     background-repeat: no-repeat;
 }
 
 .dashed-border-box {
-    background-image: repeating-linear-gradient(0deg, #ffffff40, #ffffff40 12px, transparent 12px, transparent 16px),
-        repeating-linear-gradient(90deg, #ffffff40, #ffffff40 12px, transparent 12px, transparent 16px),
-        repeating-linear-gradient(180deg, #ffffff40, #ffffff40 12px, transparent 12px, transparent 16px),
-        repeating-linear-gradient(90deg, #ffffff40, #ffffff40 12px, transparent 12px, transparent 16px);
-    background-size: 1px 100%, 100% 1px, 1px 100%, 100% 1px;
-    background-position: 0 0, 0 0, 100% 0, 0 100%;
+    background-image:
+        repeating-linear-gradient(
+            0deg,
+            #ffffff40,
+            #ffffff40 12px,
+            transparent 12px,
+            transparent 16px
+        ),
+        repeating-linear-gradient(
+            90deg,
+            #ffffff40,
+            #ffffff40 12px,
+            transparent 12px,
+            transparent 16px
+        ),
+        repeating-linear-gradient(
+            180deg,
+            #ffffff40,
+            #ffffff40 12px,
+            transparent 12px,
+            transparent 16px
+        ),
+        repeating-linear-gradient(
+            90deg,
+            #ffffff40,
+            #ffffff40 12px,
+            transparent 12px,
+            transparent 16px
+        );
+    background-size:
+        1px 100%,
+        100% 1px,
+        1px 100%,
+        100% 1px;
+    background-position:
+        0 0,
+        0 0,
+        100% 0,
+        0 100%;
     background-repeat: no-repeat;
 }
 
-.link-highlight {
-    border-bottom: thin dashed hsl(var(--light));
+.content {
+    blockquote {
+        border-left: 2px hsl(var(--primary)) solid;
+        background-color: hsla(var(--primary), 6%);
+        padding: 8px 20px;
+    }
+
+    h1 {
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 2;
+        margin-bottom: 20px;
+    }
+
+    h2 {
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 2;
+        margin-bottom: 16px;
+    }
+
+    h3 {
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 1.8;
+        margin-bottom: 12px;
+    }
+    h4 {
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 1.8;
+        margin-bottom: 12px;
+    }
+    p {
+        line-height: 1.9;
+    }
+
+    ol {
+        list-style: decimal;
+        margin-left: 12px;
+    }
+
+    ul {
+        list-style: disc;
+        margin-left: 12px;
+    }
+
+    li {
+        font-weight: 500;
+        margin-bottom: 10px;
+    }
+
+    a {
+        border-bottom: hsl(var(--light)) dashed thin;
+    }
 }
 
-.content-title {
-    font-weight: 700;
-    border-bottom: 1px solid hsl(var(--light));
-}
-
-blockquote {
-    border-left: 2px #ffffff40 solid;
-    padding: 8px 20px;
+code {
+    font-family: "JetBrains Mono", monospace !important;
+    font-size: 13px;
+    line-height: 1.6;
 }
 
 p code {
     border: hsl(var(--primary)) solid 0.5px;
     color: hsl(var(--primary));
-    padding: 5px;
-    font-size: 1.1em;
+    padding: 3px 5px;
+    margin-inline: 2px;
 }
 
 pre code {
@@ -101,8 +214,8 @@ pre code {
     padding-block: 10px;
 }
 
-pre code>* {
-    padding-inline: 16px
+pre code > * {
+    padding-inline: 16px;
 }
 
 .line.highlight {
@@ -139,5 +252,5 @@ pre code>* {
 
 .doc-nav:hover {
     background-color: white;
-    color: hsl(var(--dark))
+    color: hsl(var(--dark));
 }

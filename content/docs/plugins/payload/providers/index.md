@@ -6,61 +6,37 @@ seo:
   description: "Payload CMS auth plugin providers"
 ---
 
-::section
-Payload Auth Plugin supports many OAuth providers, and some additional providers too. Check out the list below.
-<br/>
-<br/>
-[OAuth Providers:]{.content-title}
-<br/>
+# Payload Auth Plugin supported providers
 
-::list
-○ [Apple](/docs/plugins/payload/providers/apple){.link-highlight}
-<br/>
+## OAuth Providers:
 
-○ [Atlassian](/docs/plugins/payload/providers/atlassian){.link-highlight}
-<br/>
+- [Apple](/docs/plugins/payload/providers/apple){.link-highlight}
 
-○ [Auth0](/docs/plugins/payload/providers/auth0){.link-highlight}
-<br/>
+- [Atlassian](/docs/plugins/payload/providers/atlassian){.link-highlight}
 
-○ [AWS Cogntio](/docs/plugins/payload/providers/cognito){.link-highlight}
-<br/>
+- [Auth0](/docs/plugins/payload/providers/auth0){.link-highlight}
 
-○ [Discord](/docs/plugins/payload/providers/discord){.link-highlight}
-<br/>
+- [AWS Cogntio](/docs/plugins/payload/providers/cognito){.link-highlight}
 
-○ [Facebook](/docs/plugins/payload/providers/facebook){.link-highlight}
-<br/>
+- [Discord](/docs/plugins/payload/providers/discord){.link-highlight}
 
-○ [GitHub](/docs/plugins/payload/providers/github){.link-highlight}
-<br/>
+- [Facebook](/docs/plugins/payload/providers/facebook){.link-highlight}
 
-○ [GitLab](/docs/plugins/payload/providers/gitlab){.link-highlight}
-<br/>
+- [GitHub](/docs/plugins/payload/providers/github){.link-highlight}
 
-○ [Google](/docs/plugins/payload/providers/google){.link-highlight}
-<br/>
+- [GitLab](/docs/plugins/payload/providers/gitlab){.link-highlight}
 
-○ [Microsoft Entra](/docs/plugins/payload/providers/microsoft-entra){.link-highlight}
-<br/>
+- [Google](/docs/plugins/payload/providers/google){.link-highlight}
 
-○ [Slack](/docs/plugins/payload/providers/slack){.link-highlight}
-<br/>
+- [Microsoft Entra](/docs/plugins/payload/providers/microsoft-entra){.link-highlight}
 
-::
+- [Slack](/docs/plugins/payload/providers/slack){.link-highlight}
 
 <br/>
 <br/>
 
-[Other Providers:]{.content-title}
-<br/>
+## Other Providers:
 
-::list
-○ [Password](/docs/plugins/payload/providers/password){.link-highlight}
-<br/>
+- [Password](/docs/plugins/payload/providers/password){.link-highlight}
 
-○ [Passkey](/docs/plugins/payload/providers/passkey){.link-highlight}
-<br/>
-
-::
-::
+- [Passkey](/docs/plugins/payload/providers/passkey){.link-highlight}

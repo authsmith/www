@@ -8,7 +8,7 @@ seo:
 
 ::section
 
-[Overview]{.content-title}
+# Overview
 
 Plugins serve as the authentication foundation for existing platforms like [Payload CMS](https://payloadcms.com){.link-highlight}. These platforms provide APIs and configuration options that allow for the seamless integration of custom plugins or adapters. By leveraging these capabilities, you can extend the core functionality of the system and customize the application to align with your unique requirements and workflows.
 <br/>

@@ -6,9 +6,7 @@ seo:
   description: "AuthSmith official documentation"
 ---
 
-::section
-
-[Introduction]{.content-title}
+# Introduction
 
 AuthSmith is an open-source platform built to manage authentication services at any scale. It is developer-first tool that allows standard authentication setup of different models in any application.
 <br/>
@@ -18,7 +16,7 @@ Console is a graphical user interface of AuthSmith that comes with user manageme
 <br/>
 <br/>
 
-[The future]{.content-title}
+## The future
 
 As AuthSmith matures, you can see the following updates:
 <br/>
@@ -42,5 +40,3 @@ As AuthSmith matures, you can see the following updates:
 <br/>
 
 **_Stay Tuned...._**
-
-::
