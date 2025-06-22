@@ -9,9 +9,9 @@
                         fill="white" />
                     <path d="M68.1387 33.7038H88.6582" stroke="#FCFDFE" stroke-width="4" />
                 </svg>
-                <strong class="font-black">AuthSmith</strong>
+                <strong class="font-black brand-font">AuthSmith</strong>
             </NuxtLink>
-            <ul class="text-xs font-medium flex items-center gap-2">
+            <ul class="font-medium flex items-center gap-2">
                 <li>
                     <NuxtLink to="/docs" class="hover:underline">DOCS</NuxtLink>
                 </li>

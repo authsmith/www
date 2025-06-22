@@ -3,254 +3,244 @@
 @tailwind utilities;
 
 @layer base {
-    :root {
-        --dark: 216, 12%, 8%;
-        --accent: 218, 93%, 42%;
-        --light: 210, 50%, 99%;
-        --primary: 165, 87%, 62%;
-    }
+  :root {
+    --dark: 216, 12%, 8%;
+    --accent: 218, 93%, 42%;
+    --light: 210, 50%, 99%;
+    --primary: 165, 87%, 62%;
+  }
 }
 
 *,
 html,
 body {
-    font-family: "Bricolage Grotesque", Courier, monospace;
+  font-family: "Bricolage Grotesque", Courier, monospace;
 }
 
 body::selection {
-    color: #000000;
-    background-color: hsl(var(--primary));
+  color: #000000;
+  background-color: hsl(var(--primary));
 }
 
 ::-webkit-scrollbar {
-    width: 4px;
+  width: 4px;
 }
 
 ::-webkit-scrollbar:horizontal {
-    height: 4px;
+  height: 4px;
 }
 
 ::-webkit-scrollbar-thumb,
 ::-webkit-scrollbar-thumb:horizontal {
-    border-radius: 0px;
-    border: 1px solid #d9d9d920;
-    background-clip: content-box;
-    background: #d9d9d920;
+  border-radius: 0px;
+  border: 1px solid #d9d9d920;
+  background-clip: content-box;
+  background: #d9d9d920;
 }
 
 ::-webkit-scrollbar-corner,
 ::-webkit-scrollbar-corner:horizontal {
-    background: transparent;
+  background: transparent;
 }
 
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 .dashed-border {
-    background-image:
-        repeating-linear-gradient(
-            0deg,
-            transparent,
-            transparent 12px,
-            transparent 12px,
-            transparent 16px
-        ),
-        repeating-linear-gradient(
-            90deg,
-            transparent,
-            transparent 12px,
-            transparent 12px,
-            transparent 16px
-        ),
-        repeating-linear-gradient(
-            180deg,
-            #ffffff40,
-            #ffffff40 12px,
-            transparent 12px,
-            transparent 16px
-        ),
-        repeating-linear-gradient(
-            90deg,
-            transparent,
-            transparent 12px,
-            transparent 12px,
-            transparent 16px
-        );
-    background-size:
-        1px 100%,
-        100% 1px,
-        1px 100%,
-        100% 1px;
-    background-position:
-        0 0,
-        0 0,
-        100% 0,
-        0 100%;
-    background-repeat: no-repeat;
+  background-image:
+    repeating-linear-gradient(0deg,
+      transparent,
+      transparent 12px,
+      transparent 12px,
+      transparent 16px),
+    repeating-linear-gradient(90deg,
+      transparent,
+      transparent 12px,
+      transparent 12px,
+      transparent 16px),
+    repeating-linear-gradient(180deg,
+      #ffffff40,
+      #ffffff40 12px,
+      transparent 12px,
+      transparent 16px),
+    repeating-linear-gradient(90deg,
+      transparent,
+      transparent 12px,
+      transparent 12px,
+      transparent 16px);
+  background-size:
+    1px 100%,
+    100% 1px,
+    1px 100%,
+    100% 1px;
+  background-position:
+    0 0,
+    0 0,
+    100% 0,
+    0 100%;
+  background-repeat: no-repeat;
 }
 
 .dashed-border-box {
-    background-image:
-        repeating-linear-gradient(
-            0deg,
-            #ffffff40,
-            #ffffff40 12px,
-            transparent 12px,
-            transparent 16px
-        ),
-        repeating-linear-gradient(
-            90deg,
-            #ffffff40,
-            #ffffff40 12px,
-            transparent 12px,
-            transparent 16px
-        ),
-        repeating-linear-gradient(
-            180deg,
-            #ffffff40,
-            #ffffff40 12px,
-            transparent 12px,
-            transparent 16px
-        ),
-        repeating-linear-gradient(
-            90deg,
-            #ffffff40,
-            #ffffff40 12px,
-            transparent 12px,
-            transparent 16px
-        );
-    background-size:
-        1px 100%,
-        100% 1px,
-        1px 100%,
-        100% 1px;
-    background-position:
-        0 0,
-        0 0,
-        100% 0,
-        0 100%;
-    background-repeat: no-repeat;
+  background-image:
+    repeating-linear-gradient(0deg,
+      #ffffff40,
+      #ffffff40 12px,
+      transparent 12px,
+      transparent 16px),
+    repeating-linear-gradient(90deg,
+      #ffffff40,
+      #ffffff40 12px,
+      transparent 12px,
+      transparent 16px),
+    repeating-linear-gradient(180deg,
+      #ffffff40,
+      #ffffff40 12px,
+      transparent 12px,
+      transparent 16px),
+    repeating-linear-gradient(90deg,
+      #ffffff40,
+      #ffffff40 12px,
+      transparent 12px,
+      transparent 16px);
+  background-size:
+    1px 100%,
+    100% 1px,
+    1px 100%,
+    100% 1px;
+  background-position:
+    0 0,
+    0 0,
+    100% 0,
+    0 100%;
+  background-repeat: no-repeat;
+}
+
+.brand-font {
+  font-family: "Martian Mono", monospace;
 }
 
 .content {
-    blockquote {
-        border-left: 2px hsl(var(--primary)) solid;
-        background-color: hsla(var(--primary), 6%);
-        padding: 8px 20px;
-    }
+  blockquote {
+    border-left: 2px hsl(var(--primary)) solid;
+    background-color: hsla(var(--primary), 6%);
+    padding: 8px 20px;
+  }
 
-    h1 {
-        font-size: 24px;
-        font-weight: 700;
-        line-height: 2;
-        margin-bottom: 20px;
-    }
+  h1 {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 2;
+    margin-bottom: 20px;
+  }
 
-    h2 {
-        font-size: 20px;
-        font-weight: 600;
-        line-height: 2;
-        margin-bottom: 16px;
-    }
+  h2 {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 2;
+    margin-bottom: 16px;
+  }
 
-    h3 {
-        font-size: 18px;
-        font-weight: 600;
-        line-height: 1.8;
-        margin-bottom: 12px;
-    }
-    h4 {
-        font-size: 16px;
-        font-weight: 600;
-        line-height: 1.8;
-        margin-bottom: 12px;
-    }
-    p {
-        line-height: 1.9;
-    }
+  h3 {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.8;
+    margin-bottom: 12px;
+  }
 
-    ol {
-        list-style: decimal;
-        margin-left: 12px;
-    }
+  h4 {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.8;
+    margin-bottom: 12px;
+  }
 
-    ul {
-        list-style: disc;
-        margin-left: 12px;
-    }
+  p {
+    line-height: 1.9;
+  }
 
-    li {
-        font-weight: 500;
-        margin-bottom: 10px;
-    }
+  ol {
+    list-style: decimal;
+    margin-left: 12px;
+  }
 
-    a {
-        border-bottom: hsl(var(--light)) dashed thin;
-    }
+  ul {
+    list-style: disc;
+    margin-left: 12px;
+  }
+
+  li {
+    font-weight: 500;
+    margin-bottom: 10px;
+  }
+
+  a {
+    border-bottom: hsl(var(--light)) dashed thin;
+  }
 }
 
 code {
-    font-family: "JetBrains Mono", monospace !important;
-    font-size: 13px;
-    line-height: 1.6;
+  font-family: "JetBrains Mono", monospace !important;
+  font-size: 13px;
+  line-height: 1.6;
 }
 
 p code {
-    border: hsl(var(--primary)) solid 0.5px;
-    color: hsl(var(--primary));
-    padding: 3px 5px;
-    margin-inline: 2px;
+  border: hsl(var(--primary)) solid 0.5px;
+  color: hsl(var(--primary));
+  padding: 3px 5px;
+  margin-inline: 2px;
 }
 
 pre code {
-    border: #ffffff40 solid thin;
-    display: block;
-    box-sizing: border-box;
-    overflow: scroll;
-    padding-block: 10px;
+  border: #ffffff40 solid thin;
+  display: block;
+  box-sizing: border-box;
+  overflow: scroll;
+  padding-block: 10px;
 }
 
-pre code > * {
-    padding-inline: 16px;
+pre code>* {
+  padding-inline: 16px;
 }
 
 .line.highlight {
-    background: #11382e40;
-    width: 100% !important;
-    display: block;
+  background: #11382e40;
+  width: 100% !important;
+  display: block;
 }
 
 .ascii-art {
-    font-family: monospace;
-    white-space: pre;
-    font-size: 12px;
-    overflow-x: auto;
+  font-family: monospace;
+  white-space: pre;
+  font-size: 12px;
+  overflow-x: auto;
 }
 
 @media (max-width: 768px) {
-    .ascii-art {
-        font-size: 8px;
-    }
+  .ascii-art {
+    font-size: 8px;
+  }
 }
 
 @media (max-width: 480px) {
-    .ascii-art {
-        font-size: 6px;
-    }
+  .ascii-art {
+    font-size: 6px;
+  }
 }
 
 .doc-nav {
-    border: thin #ffffff60 solid;
-    background-color: hsl(var(--dark));
-    color: white;
-    padding: 12px 16px;
+  border: thin #ffffff60 solid;
+  background-color: hsl(var(--dark));
+  color: white;
+  padding: 12px 16px;
 }
 
 .doc-nav:hover {
-    background-color: white;
-    color: hsl(var(--dark));
+  background-color: white;
+  color: hsl(var(--dark));
 }
